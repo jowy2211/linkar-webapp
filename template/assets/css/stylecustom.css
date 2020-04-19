@@ -1,0 +1,17 @@
+/* Header */
+.navbar-brand{
+	width: 300px;
+}
+.navbar-logo img{
+	position: relative;
+	top: -5px;
+}
+.navbar-brand .text-navbar-logo{
+	margin-left: 0px;
+	color: #FFF !important;
+}
+/* End Header */
+
+.text-color-white{
+	color: #FFF !important;
+}
