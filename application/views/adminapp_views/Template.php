@@ -1,3 +1,4 @@
+<?php $module = $this->uri->segment(2);?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
@@ -20,7 +21,11 @@
 	<link href="<?php echo base_url();?>template/assets/css/style-responsive.min.css" rel="stylesheet" />
 	<link href="<?php echo base_url();?>template/assets/css/theme/default.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
-	
+
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<?php include('external_css/index.php'); ?>
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="<?php echo base_url();?>template/assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
@@ -95,6 +100,12 @@
 				<!-- begin sidebar nav -->
 				<ul class="nav">
 					<li class="nav-header">Navigation</li>
+					<li class="has-sub <?php echo ($module === 'Home' ? 'active' : '');?>">
+						<a href="javascript:;">
+						    <i class="ion-ios-list"></i> 
+						    <span>Contoh Module</span>
+						</a>
+					</li>
 					<li class="has-sub">
 						<a href="javascript:;">
 						    <b class="caret pull-right"></b>
@@ -162,12 +173,14 @@
 	<!-- ================== END BASE JS ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<?php include('external_js/index.php'); ?>
 	<script src="<?php echo base_url();?>template/assets/js/apps.min.js"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 	
 	<script>
 		$(document).ready(function() {
 			App.init();
+			<?php include('external_module/index.php'); ?>
 		});
 	</script>
 </body>

@@ -30,4 +30,5 @@
 ## 1. Landing Page
 ## 2. Detail Video Page
 ## 3. Login Page
-## 4. User Page
+## 4. User Profile Page
+## 5. Register Page
