@@ -106,6 +106,12 @@
 						    <span>Contoh Module</span>
 						</a>
 					</li>
+					<li class="has-sub <?php echo ($module === 'Interest' ? 'active' : '');?>">
+						<a href="<?= base_url('adminapp/Interest') ?>">
+						    <i class="ion-ios-list"></i> 
+						    <span>Interest</span>
+						</a>
+					</li>
 					<li class="has-sub">
 						<a href="javascript:;">
 						    <b class="caret pull-right"></b>
