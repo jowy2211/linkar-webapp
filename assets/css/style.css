@@ -28,8 +28,10 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .featured-image {
 	width: 100%;
-	padding-top: 56.25%;
+	padding-top: 55.25%;
 	position: absolute;
+	filter: blur(10px);
+  	-webkit-filter: blur(10px);
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;
