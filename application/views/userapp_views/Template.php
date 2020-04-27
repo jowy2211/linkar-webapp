@@ -20,7 +20,7 @@
 <body>
 	<div id="selectedBackgroundTrailer">
 		<?php if (!empty($list->items)) { ?>
-			<div class="featured-image" style="background: url(<?php echo $list[0]->snippet->thumbnails->high->url;?>);"></div>
+			<div class="featured-image" style="background: url(<?php echo $list->items[0]->snippet->thumbnails->high->url;?>);"></div>
 		<?php } else { ?>
 			<div class="featured-image" style="background: url('<?php echo base_url();?>assets/img/404.jpg'); filter: blur(0);-webkit-filter: blur(0);"></div>
 		<?php } ?>

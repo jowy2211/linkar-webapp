@@ -26,7 +26,6 @@ class Index_ extends CI_Controller {
 		$res = _Get_Stream($fullUrl);
 		$res = json_decode($res);
 
-
 		$data['list'] = $res;
 		$data['content'] = 'userapp_views/Home/index';
 		$this->load->view('userapp_views/Template', $data);
