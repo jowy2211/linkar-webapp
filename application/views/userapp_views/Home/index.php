@@ -26,7 +26,7 @@
 </div>
 <div class="category-container">
 	<p class="category-title">Trending Now</p>
-	<div class="flex" id="listTrailers">
+	<div id="listTrailers">
 	<?php foreach ($list->items as $key => $value) { ?>
 		<div class="poster-container">
 			<div class="movie-poster" style="background: url(<?php echo $value->snippet->thumbnails->high->url;?>);">

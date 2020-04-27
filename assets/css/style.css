@@ -28,10 +28,8 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .featured-image {
 	width: 100%;
-	padding-top: 55.25%;
+	padding-top: 56.25%;
 	position: absolute;
-	filter: blur(10px);
-  	-webkit-filter: blur(10px);
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;
@@ -83,7 +81,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 .featured-movie-card .featured-poster-container {
-	width: 15%;
+	width: 16%;
 	margin-left: 5%;
 	margin-right: 25px;
 }
@@ -151,13 +149,16 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .category-container .category-title {
 	color: white;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
 .category-container .poster-container {
-	width: 12%;
-	margin-right: 10px;
+	width: 15.666666666666667%;
+	margin-right: 0.3%;
+	margin-left: 0.3%;
+	display: inline-block;
+	margin-bottom: 1%;
 }
 
 .category-container .poster-container .movie-poster {
@@ -179,5 +180,5 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 .poster-container:hover {
-	transform: scale(1.5);
+	transform: scale(1.05);
 }
