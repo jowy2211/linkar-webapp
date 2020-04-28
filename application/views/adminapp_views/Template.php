@@ -112,6 +112,18 @@
 						    <span>Interest</span>
 						</a>
 					</li>
+					<li class="has-sub <?php echo ($module === 'Content' ? 'active' : '');?>">
+						<a href="javascript:;">
+						    <b class="caret pull-right"></b>
+						    <i class="ion-ios-list"></i> 
+						    <span>Content</span>
+						</a>
+						<ul class="sub-menu">
+							<li><a href="<?= base_url('adminapp/Content/Videos') ?>">Management Videos</a></li>
+							<li><a href="<?= base_url('adminapp/Content/Channels') ?>">Management Channels</a></li>
+							<li><a href="<?= base_url('adminapp/Content/Comments') ?>">Management Comments</a></li>
+						</ul>
+					</li>
 					<li class="has-sub">
 						<a href="javascript:;">
 						    <b class="caret pull-right"></b>
