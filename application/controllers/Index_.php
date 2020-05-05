@@ -10,22 +10,12 @@ class Index_ extends CI_Controller {
 		{ 
 			redirect('adminapp/Home', 'refresh');
 		}
+		$this->load->model('Content/Model_Videos');
     }
 	
 	public function index()
 	{
-		$url = 'https://www.googleapis.com/youtube/v3/search';
-		$part = 'snippet';
-		$maxResults = 18; // Max result item
-		$key = 'AIzaSyCx-mxyqq4TRd6grXGkOkXLa54-YlQdgD8'; // Api key registed with youtube
-		$q = 'netflix+official+trailer'; // Query search for the videos
-		$type = 'video';
-		$videoDuration = 'short';
-		
-		$fullUrl = $url.'?part='.$part.'&maxResults='.$maxResults.'&key='.$key.'&q='.$q.'&type='.$type.'&videoDuration='.$videoDuration;
-		$res = _Get_Stream($fullUrl);
-		$res = json_decode($res);
-
+		$res = $this->Model_Videos->_Get_List_Trailer();
 		$data['list'] = $res;
 		$data['content'] = 'userapp_views/Home/index';
 		$this->load->view('userapp_views/Template', $data);
@@ -33,20 +23,34 @@ class Index_ extends CI_Controller {
 
 	public function Search()
 	{
+		$res = array();
 		$k = $this->input->get('k');
-		$query = implode("+", preg_split("/[\s]+/", $k));
-		$url = 'https://www.googleapis.com/youtube/v3/search';
-		$part = 'snippet';
-		$maxResults = 5; // Max result item
-		$key = 'AIzaSyCx-mxyqq4TRd6grXGkOkXLa54-YlQdgD8'; // Api key registed with youtube
-		$q = $query.'+netflix+official+trailer'; // Query search for the videos
-		$type = 'video';
-		$videoDuration = 'short';
-		
-		$fullUrl = $url.'?part='.$part.'&maxResults='.$maxResults.'&key='.$key.'&q='.$q.'&type='.$type.'&videoDuration='.$videoDuration;
-		$res = _Get_Stream($fullUrl);
-		$res = json_decode($res);
-		
-		echo json_encode(array('res' => $res));
+		$query = preg_split("/[\s]+/", $k);
+
+		if ($query) {
+			foreach ($query as $key => $value) {
+				$filter = $this->Model_Videos->_Get_Data_Filter($value);
+
+				if ($filter) {
+					foreach ($filter as $index => $item) {
+						array_push($res, $item);
+					}
+				}
+			}
+		}
+		$getUnique = count($res) > 0 ? $this->unique_($res) : $res;
+		echo json_encode(array('res' => $getUnique));
+	}
+
+	public function unique_($array) {
+	    $temp_array = array();
+	    $key_array = array();
+	    for ($i=0; $i < count($array); $i++) { 
+	    	if (!in_array($array[$i], $key_array)) {
+	    		$key_array[$i] = $array[$i];
+            	$temp_array[$i] = $array[$i];
+	    	}
+	    }
+	    return $temp_array;
 	}
 }

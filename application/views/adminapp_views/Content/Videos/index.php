@@ -1,5 +1,12 @@
 <!-- begin #content -->
 <div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="<?php echo base_url();?>">Home</a></li>
+        <li><a href="#">Content</a></li>
+        <li class="active">Management Videos</li>
+    </ol>
+    <!-- end breadcrumb -->
     <!-- begin page-header -->
     <h1 class="page-header">Management Videos</h1>
     <!-- end page-header -->
@@ -33,17 +40,13 @@
                     <table id="data-table" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Title</th>
-                                <th>URL</th>
-                                <th>Description</th>
-                                <th>Duration</th>
-                                <th>Channel</th>
-                                <th>Created By</th>
-                                <th>Created At</th>
-                                <th>Updated By</th>
-                                <th>Updated At</th>
-                                <th>Action</th>
+                                <th width="2%">No</th>
+                                <th width="5%">Channel</th>
+                                <th width="5%">Interest</th>
+                                <th width="15%">Title</th>
+                                <th width="10%">URL</th>
+                                <th width="30%">Description</th>
+                                <th width="15%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,21 +57,14 @@
                             ?>
                                     	<tr class="odd gradeX" id="<?php echo $no;?>">
             	                            <td><?= $no++;?></td>
+                                            <td><?= $value->channel;?></td>
+                                            <td><?= $value->interest;?></td>
                                             <td><?= $value->title ?></td>
                                             <td><?= $value->url ?></td>
                                             <td><?= $value->description ?></td>
-                                            <td><?= $value->duration ?></td>
-                                            <td><?= $value->channel_id ?></td>
-                                            <td><?= $value->create_by ?></td>
-                                            <td><?= $value->create_at ?></td>
-                                            <td><?= $value->update_by ?></td>
-                                            <td><?= $value->update_at ?></td>
             	                            <td>
             	                            	<a class="btn btn-white btn-xs m-r-5 btn-view" href="<?= base_url('adminapp/Content/Videos/Form?id='.$value->id) ?>">
-            	                            		<i class="fa fa-search"></i> Edit
-            	                            	</a>
-            	                            	<a class="btn btn-white btn-xs m-r-5 btn-delete" href="<?= base_url('adminapp/Content/Videos/Remove?id='.$value->id) ?>">
-            	                            		<i class="fa fa-trash"></i> Delete
+            	                            		<i class="fa fa-search"></i> View
             	                            	</a>
             	                            </td>
             	                        </tr>
@@ -77,7 +73,7 @@
                                 } else {
                             ?>
                                 <tr class="odd gradeX" id="1">
-                                    <td colspan="11" class="text-center">No Data</td>
+                                    <td colspan="5" class="text-center">No Data</td>
                                 </tr>
                             <?php 
                                 } 

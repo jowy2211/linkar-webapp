@@ -2,21 +2,21 @@
 <div class="searchbar-container">
 	<div class="flex box dim">
 		<span class="material-icons search-icon">search</span>
-		<input class="search-input" type="text" name="k" id="searchValue" autocomplete="off" placeholder="Search in Linkar" <?php echo !empty($list->error) ? 'disabled' : '';?>>
+		<input class="search-input" type="text" name="k" id="searchValue" autocomplete="off" placeholder="Search in Linkar">
 	</div>
 </div>
-<?php if (!empty($list->items)) { ?>
+<?php if (!empty($list)) { ?>
 <div id="selectedTrailer">
 	<div class="flex featured-movie-card">
 		<div class="featured-poster-container">
 			<div class="featured-poster"
-				style="background: url(<?php echo $list->items[0]->snippet->thumbnails->high->url;?>);">
+				style="background: url(<?php echo $list[0]->thumbnails;?>);">
 			</div>
 		</div>
 		<div class="description-container">
-			<p class="featured-title"><?php echo $list->items[0]->snippet->title;?></p>
+			<p class="featured-title"><?php echo $list[0]->title;?></p>
 			<p class="dim">
-				<?php echo $list->items[0]->snippet->description;?>
+				<?php echo $list[0]->description;?>
 			</p>
 			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect featured-play-button">
 				<i class="material-icons">play_arrow</i>Play
@@ -27,9 +27,9 @@
 <div class="category-container">
 	<p class="category-title">Trending Now</p>
 	<div id="listTrailers">
-	<?php foreach ($list->items as $key => $value) { ?>
-		<div class="poster-container">
-			<div class="movie-poster" style="background: url(<?php echo $value->snippet->thumbnails->high->url;?>);">
+	<?php foreach ($list as $key => $value) { ?>
+		<div class="poster-container" onClick="selectedTrailer($value);" id="<?php echo $value->id;?>">
+			<div class="movie-poster" style="background: url(<?php echo $value->thumbnails;?>);">
 			</div>
 		</div>
 	<?php } ?>
@@ -39,8 +39,7 @@
 <div style="text-align: center; align-content: center; color: #fff">
 	<h3>
 		Sorry :( <br>
-		<?php echo $list->error->message;?> <br>
-		Please, come back tommorow :)
+		Under Development <br>
 	</h3>
 </div>
 <?php } ?>

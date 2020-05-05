@@ -4,5 +4,8 @@
 		case 'Home':
 			echo 'TableManageDefault.init();';
 			break;
+		case 'Content':
+			echo 'TableManageDefault.init();';
+			break;
 	}
 ?>

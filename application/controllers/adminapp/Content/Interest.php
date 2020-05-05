@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Channels extends CI_Controller {
+class Interest extends CI_Controller {
 	
 	public function __construct()
     {
@@ -11,15 +11,15 @@ class Channels extends CI_Controller {
 			redirect(base_url(), 'refresh');
 		}
 		// Load specific model here
-		$this->load->model('Content/Model_Channels');
+		$this->load->model('Model_Interest');
 		$this->load->model('Model_Crud');
     }
 
 	public function index()
 	{
 		// Add specific data here
-		$list = $this->Model_Channels->_Get_data();
-		$data['content'] = 'adminapp_views/Content/Channels/index';
+		$list = $this->Model_Interest->_Get_data();
+		$data['content'] = 'adminapp_views/Content/Interest/index';
 		$data['list'] = $list;
 		$this->load->view('adminapp_views/Template', $data);
 	}
@@ -31,17 +31,17 @@ class Channels extends CI_Controller {
 		$param = $this->input->get();
 		if (isset($param['id'])) {
 			$data['action'] = 'edit';
-			$whereChannel = array('id' => $param['id']);
-			$channel = $this->Model_Channels->_Get_data($whereChannel);
-			if (!count($channel)) {
-				redirect(base_url('adminapp/Content/Videos'));
+			$whereInterest = array('id' => $param['id']);
+			$interest = $this->Model_Interest->_Get_data($whereInterest);
+			if (!count($interest)) {
+				redirect(base_url('adminapp/Interest'));
 			} else {
-				$data['channel'] = $channel[0];
+				$data['interest'] = $interest[0];
 			}
 		} else {
 			$data['action'] = 'add';
 		}
-		$data['content'] = 'adminapp_views/Content/Channels/Form';
+		$data['content'] = 'adminapp_views/Content/Interest/Form';
 		$this->load->view('adminapp_views/Template', $data);
 	}
 
@@ -51,12 +51,12 @@ class Channels extends CI_Controller {
 		# code...
 		$data_input['name'] = $this->input->post('name');
 		if ($this->input->post('method') == 'add') {
-			if($this->Model_Crud->_insert('channels',$data_input) == 1){
+			if($this->Model_Crud->_insert('interests',$data_input) == 1){
 				$this->session->set_flashdata(
 					"message",
 					"<div class='alert alert-success fade in m-b-15'>
 						<strong>Success!</strong>
-						Channel has been added
+						Interes Has been added
 						<span class='close' data-dismiss='alert'>&times;</span>
 					</div>"
 				);
@@ -71,9 +71,9 @@ class Channels extends CI_Controller {
 			}
 		} else if ($this->input->post('method') == 'edit'){
 			$id = $this->input->post('id');
-			$whereChannel = array('id' => $id);
-			$dataChannel = $this->Model_Channels->_Get_data($whereChannel);
-			if (!count($dataChannel)) {
+			$whereInterest = array('id' => $id);
+			$dataInterest = $this->Model_Interest->_Get_data($whereInterest);
+			if (!count($dataInterest)) {
 				$this->session->set_flashdata(
 					"message",
 					"<div class='alert alert-danger fade in m-b-15'>
@@ -82,12 +82,12 @@ class Channels extends CI_Controller {
 					</div>"
 				);
 			} else {
-				if($this->Model_Crud->_update('channels',$data_input,$whereChannel) == 1){
+				if($this->Model_Crud->_update('interests',$data_input,$whereInterest) == 1){
 					$this->session->set_flashdata(
 						"message",
 						"<div class='alert alert-success fade in m-b-15'>
 							<strong>Success!</strong>
-							Channel has been updated
+							Interes Has been updated
 							<span class='close' data-dismiss='alert'>&times;</span>
 						</div>"
 					);
@@ -110,7 +110,7 @@ class Channels extends CI_Controller {
 				</div>"
 			);
 		}
-		redirect(base_url('adminapp/Content/Channels'));
+		redirect(base_url('adminapp/Content/Interest'));
 	}
 
 	public function Remove()
@@ -126,9 +126,9 @@ class Channels extends CI_Controller {
 				</div>"
 			);
 		} else {
-			$whereChannel = array('id' => $param);
-			$dataChannel = $this->Model_Channels->_Get_data($whereChannel);
-			if (!count($dataChannel)) {
+			$whereInterest = array('id' => $param);
+			$dataInterest = $this->Model_Interest->_Get_data($whereInterest);
+			if (!count($dataInterest)) {
 				$this->session->set_flashdata(
 					"message",
 					"<div class='alert alert-danger fade in m-b-15'>
@@ -137,12 +137,12 @@ class Channels extends CI_Controller {
 					</div>"
 				);
 			} else {
-				if($this->Model_Crud->_delete('channels',$whereChannel) == 1){
+				if($this->Model_Crud->_delete('interests',$whereInterest) == 1){
 					$this->session->set_flashdata(
 						"message",
 						"<div class='alert alert-success fade in m-b-15'>
 							<strong>Success!</strong>
-							Channel has been deleted
+							Interes Has been deleted
 							<span class='close' data-dismiss='alert'>&times;</span>
 						</div>"
 					);
@@ -157,20 +157,6 @@ class Channels extends CI_Controller {
 				}
 			}
 		}
-		redirect(base_url('adminapp/Content/Channels'));
-	}
-
-	public function GetChannel()
-	{
-		$url = 'https://www.googleapis.com/youtube/v3/channels';
-		$key = 'AIzaSyCx-mxyqq4TRd6grXGkOkXLa54-YlQdgD8'; // Api key registed with youtube
-		$q = 'FreestyleReplay'; // Put username channel want to get
-		$part = 'id';
-		
-		$fullUrl = $url.'?&key='.$key.'&forUsername='.$q.'&part='.$part;
-		$res = _Get_Stream($fullUrl);
-		$res = json_decode($res);
-
-		var_dump($res);
+		redirect(base_url('adminapp/Content/Interest'));
 	}
 }

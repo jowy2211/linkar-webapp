@@ -1,0 +1,184 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--background-color) !important;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+	outline: none;
+}
+
+::placeholder {
+	color: white;
+	opacity: 1;
+}
+
+.flex {
+	display: flex;
+}
+
+.dim {
+	opacity: 0.74;
+}
+
+/* background image  */
+
+.featured-image {
+	width: 100%;
+	padding-top: 56.25%;
+	position: absolute;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center;
+	z-index: -1;
+}
+
+/* end of background image */
+
+/* searchbar */
+
+.searchbar-container {
+	padding-top: 20px;
+}
+
+.searchbar-container .box {
+	width: 30%;
+	margin-left: 35%;
+	height: 30px;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+	box-shadow: 0px 0px 120px #000;
+}
+
+.searchbar-container .box .search-icon {
+	margin-top: 3px;
+	margin-right: 10px;
+	margin-left: 10px;
+	color: white;
+}
+
+.searchbar-container .box .search-input {
+	background: transparent;
+	border: 0;
+	font-size: 14px;
+	width: 100%;
+	padding-right: 16px;
+	color: white;
+	margin-top: -2px;
+}
+
+/* end of searchbar */
+
+/* featured movie */
+
+.featured-movie-card {
+	width: 100%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+}
+
+.featured-movie-card .featured-poster-container {
+	width: 16%;
+	margin-left: 5%;
+	margin-right: 25px;
+}
+
+.featured-movie-card .featured-poster-container .featured-poster {
+	width: 100%;
+	padding-top: 150%;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center;
+	border-radius: 10px;
+	box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.featured-movie-card .description-container {
+	width: 30%;
+	align-self: center;
+	color: white;
+}
+
+.featured-movie-card .description-container .featured-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.featured-movie-card .description-container .featured-information p {
+	margin-right: 16px;
+}
+
+.featured-movie-card .description-container .featured-information .rating-container {
+	margin-right: 16px;
+	height: 20px;
+	color: white;
+	border: 2px solid;
+	padding: 0px 5px;
+}
+
+.featured-movie-card .description-container .featured-information .rating-container p {
+	font-size: 12px;
+	line-height: 1.7;
+	margin-right: 0px !important;
+}
+
+.featured-movie-card .description-container .featured-play-button {
+	color: white;
+	text-transform: capitalize;
+	padding-left: 26px;
+	padding-right: 36px;
+	border-radius: 5px;
+}
+
+.featured-movie-card .description-container .featured-play-button i {
+	margin-top: -3px;
+	margin-right: 5px;
+}
+
+/* end of featured movie */
+
+/* category  */
+
+.category-container {
+	padding: 0 3%;
+	margin-bottom: 50px;
+}
+
+.category-container .category-title {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.category-container .poster-container {
+	width: 15.666666666666667%;
+	margin-right: 0.3%;
+	margin-left: 0.3%;
+	display: inline-block;
+	margin-bottom: 1%;
+}
+
+.category-container .poster-container .movie-poster {
+	width: 100%;
+	padding-top: 150%;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center;
+	border-radius: 10px;
+	box-shadow: 0 0 12px var(--shadow-color);
+}
+
+/* end of category */
+
+/* animation */
+
+.poster-container {
+	transition: transform .2s;
+}
+
+.poster-container:hover {
+	transform: scale(1.05);
+}

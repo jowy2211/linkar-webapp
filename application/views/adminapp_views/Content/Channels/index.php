@@ -1,5 +1,12 @@
 <!-- begin #content -->
 <div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="<?php echo base_url();?>">Home</a></li>
+        <li><a href="#">Content</a></li>
+        <li class="active">Management Channels</li>
+    </ol>
+    <!-- end breadcrumb -->
     <!-- begin page-header -->
     <h1 class="page-header">Management Channels</h1>
     <!-- end page-header -->
@@ -9,15 +16,6 @@
         </div>
     </div>
     <!-- begin row -->
-    <div class="row">
-    	<div class="col-md-12 pull-right">
-            <p class="m-b-20">
-                <a href="<?php echo base_url('adminapp/Content/Channels/Form')?>" class="btn btn-inverse btn-sm">
-                	<i class="fa fa-plus"></i> Add New Data
-               	</a>
-            </p>
-        </div>
-    </div>
     <div class="row">
         <!-- begin col-12 -->
         <div class="col-md-12">
@@ -34,11 +32,9 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Channel ID</th>
                                 <th>Name</th>
-                                <th>Created By</th>
                                 <th>Created At</th>
-                                <th>Updated By </th>
-                                <th>Updated At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -50,17 +46,12 @@
                             ?>
                                     	<tr class="odd gradeX" id="<?php echo $no;?>">
             	                            <td><?= $no++;?></td>
-            	                            <td><?= $value->name ?></td>
-                                            <td><?= $value->created_by ?></td>
-                                            <td><?= $value->created_at ?></td>
-                                            <td><?= $value->updated_by ?></td>
-                                            <td><?= $value->updated_at ?></td>
+            	                            <td><?= $value->channel_id ?></td>
+                                            <td><?= $value->name ?></td>
+                                            <td><?= $value->create_at ?></td>
             	                            <td>
             	                            	<a class="btn btn-white btn-xs m-r-5 btn-view" href="<?= base_url('adminapp/Content/Channels/Form?id='.$value->id) ?>">
             	                            		<i class="fa fa-search"></i> Edit
-            	                            	</a>
-            	                            	<a class="btn btn-white btn-xs m-r-5 btn-delete" href="<?= base_url('adminapp/Content/Channels/Remove?id='.$value->id) ?>">
-            	                            		<i class="fa fa-trash"></i> Delete
             	                            	</a>
             	                            </td>
             	                        </tr>

@@ -11,19 +11,19 @@
 	<meta content="" name="author" />
 	
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
-	<link href="<?php echo base_url().'template/';?>assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/css/animate.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/css/style.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/css/style-responsive.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url().'template/';?>assets/css/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="<?php echo base_url();?>assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/animate.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/style.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/theme/default.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
-	<link href="<?php echo base_url().'template/'; ?>assets/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url(); ?>assets/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
 	
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="<?php echo base_url().'template/';?>assets/plugins/pace/pace.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 	<script>
 		var base_url = '<?php echo base_url(); ?>';
@@ -42,7 +42,7 @@
             <!-- begin news-feed -->
             <div class="news-feed">
                 <div class="news-image">
-                    <img src="<?php echo base_url().'template/';?>assets/img/login-bg/bg.jpg" data-id="login-cover-image" alt="" />
+                    <img src="<?php echo base_url();?>assets/img/login-bg/bg.jpg" data-id="login-cover-image" alt="" />
                 </div>
                 <div class="news-caption">
                     <h4 class="caption-title"><i class="ion-ios-ionic-outline m-r-15 fa-2x pull-left"></i>LINKAR</h4>
@@ -91,23 +91,23 @@
 	<!-- end page container -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="<?php echo base_url().'template/';?>assets/plugins/jquery/jquery-1.9.1.min.js"></script>
-	<script src="<?php echo base_url().'template/';?>assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
-	<script src="<?php echo base_url().'template/';?>assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
-	<script src="<?php echo base_url().'template/';?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/crossbrowserjs/html5shiv.js"></script>
 		<script src="assets/crossbrowserjs/respond.min.js"></script>
 		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
 	<![endif]-->
-	<script src="<?php echo base_url().'template/';?>assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="<?php echo base_url().'template/';?>assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 	<!-- ================== END BASE JS ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="<?php echo base_url().'template/';?>assets/plugins/gritter/js/jquery.gritter.js"></script>
-	<script src="<?php echo base_url().'template/';?>assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
-	<script src="<?php echo base_url().'template/';?>assets/js/apps.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/gritter/js/jquery.gritter.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/apps.min.js"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script>
