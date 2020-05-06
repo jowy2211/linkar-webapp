@@ -19,15 +19,13 @@
 
 <body>
 	<div id="selectedBackgroundTrailer">
-		<?php if (!empty($list)) { ?>
-			<div class="featured-image" style="background: url(<?php echo $list[0]->thumbnails;?>);"></div>
-		<?php } else { ?> -->
-			<div class="featured-image" style="background: url('<?php echo base_url();?>assets/img/404.jpg'); filter: blur(0);-webkit-filter: blur(0);"></div>
-		<?php } ?>
+		<img class="featured-image" src="<?php echo base_url();?>assets/img/login-bg/bgbg.jpg" />
 	</div>
 	<div>
 		<?php $this->load->view($content); ?>
 	</div>
+	<!-- Photo by Sincerely Media on Unsplash -->
 </body>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/js/custom/Search.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/custom/Home.js"></script>
 </html>

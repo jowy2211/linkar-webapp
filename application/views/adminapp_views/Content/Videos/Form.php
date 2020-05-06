@@ -26,7 +26,7 @@
 								<select class="form-control" id="interest" name="interest" data-parsley-required="true" <?php echo $action === 'edit' ? 'disabled' : 'required';?>>
 									<option value=""> ---- Select Interest ---- </option>
 									<?php foreach ($interests as $key => $value) { ?>
-										<option value="<?php echo $value->id;?>" <?php echo $value->id === $video->interest_id ? 'selected' : '';?>><?php echo $value->name;?></option>
+										<option value="<?php echo $value->id;?>" <?php echo ($action === 'edit' ? ($value->id === $video->interest_id ? 'selected' : '') : '');?>><?php echo $value->name;?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -37,7 +37,7 @@
 								<select class="form-control" id="channel" name="channel" data-parsley-required="true" <?php echo $action === 'edit' ? 'disabled' : 'required';?>>
 									<option value=""> ---- Select Channel ---- </option>
 									<?php foreach ($channels as $key => $value) { ?>
-										<option value="<?php echo $value->id;?>" <?php echo $value->id === $video->channel_id ? 'selected' : '';?>><?php echo $value->name;?></option>
+										<option value="<?php echo $value->id;?>" <?php echo ($action === 'edit' ? ($value->id === $video->channel_id ? 'selected' : '') : '');?>><?php echo $value->name;?></option>
 									<?php } ?>
 								</select>
 							</div>

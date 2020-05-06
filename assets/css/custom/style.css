@@ -28,7 +28,8 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .featured-image {
 	width: 100%;
-	padding-top: 56.25%;
+	height: 100%;
+	padding-top: auto;
 	position: absolute;
 	filter: blur(10px);
   	-webkit-filter: blur(10px);
@@ -183,4 +184,26 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .poster-container:hover {
 	transform: scale(1.05);
+}
+/* end of animation */
+
+/* media player */
+
+.media-player {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(130, 130, 130, 0.7);
+	text-align: center;
+}
+
+.media-player .frame-trailer {
+	z-index: 2;
+	width: 50%;
+	height: 50%;
+	display: inline-block;
+	margin-top: 10%;
 }

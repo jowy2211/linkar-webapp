@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2020 at 06:38 PM
+-- Generation Time: May 06, 2020 at 08:04 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -173,7 +173,7 @@ CREATE TABLE `videos` (
   `thumbnails` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `publish_at` datetime DEFAULT NULL,
   `create_at` timestamp NULL DEFAULT current_timestamp(),
-  `flag` set('VERIFIED','UNVERFIED') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'VERIFIED'
+  `flag` set('VERIFIED','UNVERIFIED') COLLATE utf8mb4_unicode_ci DEFAULT 'VERIFIED'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -328,7 +328,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

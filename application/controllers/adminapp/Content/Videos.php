@@ -92,7 +92,7 @@ class Videos extends CI_Controller {
 					$data['publish_at'] = $value->snippet->publishedAt;
 					$data['channel_id'] = $channelId;
 					$data['interest_id'] = $interestId;
-					$data['flag'] = 'UNVERFIED';
+					$data['flag'] = 'UNVERIFIED';
 					$res = $this->Model_Videos->_Store_Videos($data);
 
 					if (!$res) {
@@ -115,11 +115,19 @@ class Videos extends CI_Controller {
 					<span class='close' data-dismiss='alert'>&times;</span>
 				</div>"
 			);
-		} else {
+		} elseif ($result && !empty($result->error)) {
 			$this->session->set_flashdata(
 				"message",
 				"<div class='alert alert-danger fade in m-b-15'>
 					<strong>Sorry :( ".$result->error->message."</strong>
+					<span class='close' data-dismiss='alert'>&times;</span>
+				</div>"
+			);
+		} else {
+			$this->session->set_flashdata(
+				"message",
+				"<div class='alert alert-danger fade in m-b-15'>
+					<strong>Sorry :( Trailer you looking for are not found, please try again with other parameter.</strong>
 					<span class='close' data-dismiss='alert'>&times;</span>
 				</div>"
 			);

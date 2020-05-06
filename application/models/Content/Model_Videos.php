@@ -26,13 +26,15 @@ class Model_Videos extends CI_Model{
         return $res->row();
     }
 
-    public function _Get_List_Trailer()
+    public function _Get_List_Trailer($flag)
     {
         $this->db->select('a.*, b.name as channel, c.name as interest');
         $this->db->from('videos a');
         $this->db->join('channels b','a.channel_id = b.id');
         $this->db->join('interests c','a.interest_id = c.id');
-        $this->db->where('a.flag', 'VERIFIED');
+        $this->db->where('a.flag', $flag);
+        // $this->db->group_by('b.name');
+        // $this->db->group_by('a.publish_at');
         $res = $this->db->get();
         return $res->result();
     }

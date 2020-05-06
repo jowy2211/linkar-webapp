@@ -15,8 +15,10 @@ class Index_ extends CI_Controller {
 	
 	public function index()
 	{
-		$res = $this->Model_Videos->_Get_List_Trailer();
-		$data['list'] = $res;
+		$official = $this->Model_Videos->_Get_List_Trailer('VERIFIED');
+		$unofficial = $this->Model_Videos->_Get_List_Trailer('UNVERIFIED');
+		$data['list_verified'] = $official;
+		$data['list_unverified'] = $unofficial;
 		$data['content'] = 'userapp_views/Home/index';
 		$this->load->view('userapp_views/Template', $data);
 	}
@@ -52,5 +54,18 @@ class Index_ extends CI_Controller {
 	    	}
 	    }
 	    return $temp_array;
+	}
+
+	public function Detail()
+	{
+		$res = null;
+		$id = $this->input->get('id');
+		if ($id) {
+			$res = $this->Model_Videos->_Get_Detail($id);
+			if ($res) {
+
+			}
+		}
+		echo json_encode(array('res' => $res));
 	}
 }

@@ -21,21 +21,21 @@ const getData = (data) => {
 
 const setData = (list) => {
 	const trailers = list.map(val => {
-		return '<div class="poster-container">\
-					<div class="movie-poster" style="background: url('+val.snippet.thumbnails.high.url+');"></div>\
+		return '<div class="poster-container" onClick="selectTrailer('+val.id+');" id="'+val.id+'">\
+					<div class="movie-poster" style="background: url('+val.thumbnails+');"></div>\
 				</div>';
 	});
 	document.getElementById('listTrailers').innerHTML = trailers;
 	const selectedTrailer = '<div class="flex featured-movie-card">\
 			<div class="featured-poster-container">\
 				<div class="featured-poster"\
-					style="background: url('+list[0].snippet.thumbnails.high.url+');">\
+					style="background: url('+list[0].thumbnails+');">\
 				</div>\
 			</div>\
 			<div class="description-container">\
-				<p class="featured-title">'+list[0].snippet.title+'</p>\
+				<p class="featured-title">'+list[0].title+'</p>\
 				<p class="dim">\
-					'+list[0].snippet.description+'\
+					'+list[0].description+'\
 				</p>\
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect featured-play-button">\
 					<i class="material-icons">play_arrow</i>Play\
@@ -43,6 +43,6 @@ const setData = (list) => {
 			</div>\
 		</div>';
 	document.getElementById('selectedTrailer').innerHTML = selectedTrailer;
-	const selectedBackgroundTrailer = '<div class="featured-image" style="background: url('+list[0].snippet.thumbnails.high.url+');" ></div>'
+	const selectedBackgroundTrailer = '<div class="featured-image" style="background: url('+list[0].thumbnails+');" ></div>'
 	document.getElementById('selectedBackgroundTrailer').innerHTML = selectedBackgroundTrailer;
 };

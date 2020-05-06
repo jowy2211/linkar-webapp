@@ -42,7 +42,7 @@
             <!-- begin news-feed -->
             <div class="news-feed">
                 <div class="news-image">
-                    <img src="<?php echo base_url();?>assets/img/login-bg/bg.jpg" data-id="login-cover-image" alt="" />
+                    <img src="<?php echo base_url();?>assets/img/login-bg/bgbg.jpg" data-id="login-cover-image" alt="" />
                 </div>
                 <div class="news-caption">
                     <h4 class="caption-title"><i class="ion-ios-ionic-outline m-r-15 fa-2x pull-left"></i>LINKAR</h4>
