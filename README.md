@@ -6,10 +6,10 @@
 # Require module in userapp
 
 ## 1. Landing Page - Done
-## 2. Detail Video Page
-## 3. Login Page
+## 2. Detail Video Page - Done
+## 3. Login Page - Done
 ## 4. User Profile Page
-## 5. Register Page
+## 5. Register Page - Done
 
 ## adminapp
 ### `localhost/linkar-webapp/Auth`
