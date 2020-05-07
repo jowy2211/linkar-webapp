@@ -32,7 +32,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 	padding-top: auto;
 	position: absolute;
 	filter: blur(10px);
-  	-webkit-filter: blur(10px);
+	-webkit-filter: blur(10px);
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;
@@ -173,6 +173,31 @@ input:focus, select:focus, textarea:focus, button:focus {
 	background-position: center center;
 	border-radius: 10px;
 	box-shadow: 0 0 12px var(--shadow-color);
+	padding-bottom: 0.01%;
+}
+
+.category-container .poster-container .movie-poster .rating-container {
+	color: white;
+	padding: 0 10px;
+	background: #3f51b5;
+	border-radius: 20px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+.category-container .poster-container .movie-poster .rating-container span {
+	font-size: 14px;
+	align-items: center;
+	align-self: center;
+	margin-right: 3px;
+	opacity: 0.54;
+}
+
+.category-container .poster-container .movie-poster .rating-container p {
+	margin-bottom: 0px;
+	font-weight: bold;
 }
 
 /* end of category */
@@ -186,6 +211,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 .poster-container:hover {
 	transform: scale(1.05);
 }
+
 /* end of animation */
 
 /* media player */
