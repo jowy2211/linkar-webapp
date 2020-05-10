@@ -3,10 +3,6 @@
 	padding: 0;
 }
 
-body {
-	background: var(--background-color) !important;
-}
-
 input:focus, select:focus, textarea:focus, button:focus {
 	outline: none;
 }
@@ -24,56 +20,71 @@ input:focus, select:focus, textarea:focus, button:focus {
 	opacity: 0.74;
 }
 
-/* background image  */
-
-.featured-image {
-	width: 100%;
-	height: 100%;
-	padding-top: auto;
-	position: absolute;
-	filter: blur(10px);
-	-webkit-filter: blur(10px);
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
-	background-position: center center;
-	z-index: -1;
+.style-bg {
+	background: rgba(255, 255, 255, 0.4) !important;
+	color: white !important;
 }
-
-/* end of background image */
 
 /* searchbar */
 
-.searchbar-container {
-	padding-top: 20px;
+.topnav .searchbar-container {
+	display: inline-block;
+	width: 30%;
+	padding: 12px 16px;
 }
 
-.searchbar-container .box {
-	width: 30%;
-	margin-left: 35%;
-	height: 30px;
+.topnav .searchbar-container .box {
 	background: rgba(255, 255, 255, 0.4);
 	border-radius: 10px;
-	box-shadow: 0px 0px 120px #000;
 }
 
-.searchbar-container .box .search-icon {
-	margin-top: 3px;
+.topnav .searchbar-container .box .search-icon {
 	margin-right: 10px;
 	margin-left: 10px;
 	color: white;
 }
 
-.searchbar-container .box .search-input {
+.topnav .searchbar-container .box .search-input {
 	background: transparent;
 	border: 0;
 	font-size: 14px;
 	width: 100%;
 	padding-right: 16px;
 	color: white;
-	margin-top: -2px;
 }
 
 /* end of searchbar */
+
+/* menu */
+
+/* Add a black background color to the top navigation */
+.topnav {
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	overflow: hidden;
+	margin-bottom: 3%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+/* end menu */
 
 /* featured movie */
 
@@ -147,6 +158,10 @@ input:focus, select:focus, textarea:focus, button:focus {
 /* category  */
 
 .category-container {
+	position: absolute;
+	width: 95%;
+	height: 100%;
+	top: 10%;
 	padding: 0 3%;
 	margin-bottom: 50px;
 }

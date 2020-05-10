@@ -82,5 +82,37 @@ class Model_Videos extends CI_Model{
         $res = $this->db->insert('videos', $data);
         return $res;
     }
+
+    public function _Views_Trailer($id)
+    {
+        $this->db->select('*');
+        $this->db->from('videos');
+        $this->db->where('id', $id);
+        $res = $this->db->get()->row();
+        if ($res) {
+            $current = (int)$res->views;
+            $data['views'] = $current + 1;
+            $this->db->where('id', $id);
+            $this->db->update('videos', $data);
+        }
+    }
+
+    public function _Store_Comment($data)
+    {
+        $data['status'] = 'PUBLISH';
+        $res = $this->db->insert('comments', $data);
+        return $res;
+    }
+
+    public function _Get_Data_Comment($id)
+    {
+        $this->db->select('a.*, b.fullname as name');
+        $this->db->from('comments a');
+        $this->db->join('users b','a.user_id = b.user_id');
+        $this->db->where('a.status', 'PUBLISH');
+        $this->db->where('a.video_id', $id);
+        $res = $this->db->get()->result();
+        return $res;
+    }
 }
 ?>

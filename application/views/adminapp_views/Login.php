@@ -43,6 +43,7 @@
             <div class="news-feed">
                 <div class="news-image">
                     <img src="<?php echo base_url();?>assets/img/login-bg/bgbg.jpg" data-id="login-cover-image" alt="" />
+                    <!-- Background Image by Sincerely Media on Unsplash -->
                 </div>
                 <div class="news-caption">
                     <h4 class="caption-title"><i class="ion-ios-ionic-outline m-r-15 fa-2x pull-left"></i>LINKAR</h4>
@@ -66,6 +67,11 @@
                 <!-- end login-header -->
                 <!-- begin login-content -->
                 <div class="login-content">
+                	<div class="row">
+				        <div class="col-md-12">
+				            <?= $this->session->flashdata("message"); ?>
+				        </div>
+				    </div>
 					<form action="<?php echo base_url('Auth/Authenticate');?>" method="POST" class="margin-bottom-0">
                         <div class="form-group m-b-15">
 							 <input type="text" name="username" class="form-control input-lg" placeholder="Username" required />

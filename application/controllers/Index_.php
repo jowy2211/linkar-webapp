@@ -15,10 +15,30 @@ class Index_ extends CI_Controller {
 	
 	public function index()
 	{
-		$official = $this->Model_Videos->_Get_List_Trailer('VERIFIED');
-		$unofficial = $this->Model_Videos->_Get_List_Trailer('UNVERIFIED');
-		$data['list_verified'] = $official;
-		$data['list_unverified'] = $unofficial;
+		$res = array();
+		$k = $this->input->get('k');
+		$query = preg_split("/[\s]+/", $k);
+
+		if (count($query) > 0) {
+			foreach ($query as $key => $value) {
+				$filter = $this->Model_Videos->_Get_Data_Filter($value);
+
+				if ($filter) {
+					foreach ($filter as $index => $item) {
+						array_push($res, $item);
+					}
+				}
+			}
+			$getUnique = count($res) > 0 ? $this->unique_($res) : $res;
+			$data['list_verified'] = $getUnique;
+			$data['list_unverified'] = array();
+		} else {
+			$official = $this->Model_Videos->_Get_List_Trailer('VERIFIED');
+			$unofficial = $this->Model_Videos->_Get_List_Trailer('UNVERIFIED');
+			$data['list_verified'] = $official;
+			$data['list_unverified'] = $unofficial;
+		}
+
 		$data['content'] = 'userapp_views/Home/index';
 		$this->load->view('userapp_views/Template', $data);
 	}
@@ -29,7 +49,7 @@ class Index_ extends CI_Controller {
 		$k = $this->input->get('k');
 		$query = preg_split("/[\s]+/", $k);
 
-		if ($query) {
+		if (count($query)) {
 			foreach ($query as $key => $value) {
 				$filter = $this->Model_Videos->_Get_Data_Filter($value);
 

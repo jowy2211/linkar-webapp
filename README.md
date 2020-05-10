@@ -8,7 +8,7 @@
 ## 1. Landing Page - Done
 ## 2. Detail Video Page - Done
 ## 3. Login Page - Done
-## 4. User Profile Page
+## 4. User Profile Page - Pending
 ## 5. Register Page - Done
 
 ## adminapp
@@ -19,11 +19,9 @@
 
 # Require module in adminapp
 
-## 1. Module Interest
-
-## 2. Module Content
+## 1. Module Content
 ### - Management Interest - Done
 ### - Management Channels - Done
 ### - Management Videos - Done
-### - Management Comment - Pending
+### - Management Comment - On Progress
 

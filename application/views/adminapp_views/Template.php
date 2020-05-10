@@ -70,7 +70,7 @@
 							<li class="arrow"></li>
 							<li><a href="javascript:;">Edit Profile</a></li>
 							<li class="divider"></li>
-							<li><a href="<?php echo base_url('Auth/Signout');?>">Log Out</a></li>
+							<li><a href="<?php echo base_url('Signout');?>">Log Out</a></li>
 						</ul>
 					</li>
 				</ul>
