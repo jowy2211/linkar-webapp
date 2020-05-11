@@ -12,36 +12,42 @@
 	            <div class="panel-heading">
 	                <div class="panel-heading-btn">
 	                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-	                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-	                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-	                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 	                </div>
-	                <h4 class="panel-title"><?= $action == 'add' ? 'Add' : 'Edit '.$comment->name ?></h4>
+	                <h4 class="panel-title">Set status comment</h4>
 	            </div>
 	            <div class="panel-body panel-form">
-	                <form class="form-horizontal form-bordered" data-parsley-validate="true" method="POST" action="<?= base_url('adminapp/Interest/Store') ?>">
+	                <form class="form-horizontal form-bordered" data-parsley-validate="true" method="POST" action="<?= base_url('adminapp/Content/Comments/Store') ?>">
 						<div class="form-group">
 							<label class="control-label col-md-4 col-sm-4">Text :</label>
                             <div class="col-md-6 col-sm-6">
-                                <textarea class="form-control" id="text" name="text" placeholder="Text" rows="5" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->text : '' ?>" required></textarea>
+                                <textarea class="form-control" id="text" name="text" placeholder="Text" rows="5" data-parsley-required="true" disabled="" required><?= $action == 'edit' ? $comment->text : '' ?></textarea>
                             </div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-4 col-sm-4">User :</label>
 							<div class="col-md-6 col-sm-6">
-								<input class="form-control" type="text" id="user" name="user" placeholder="User" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->user_id : '' ?>" required />
+								<input class="form-control" type="text" id="user" name="user" placeholder="User" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->user : '' ?>" disabled="" required />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-4 col-sm-4">Video :</label>
 							<div class="col-md-6 col-sm-6">
-								<input class="form-control" type="text" id="video" name="video" placeholder="Video" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->video_id : '' ?>" required />
+								<input class="form-control" type="text" id="video" name="video" placeholder="Video" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->video : '' ?>" disabled="" required />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-4 col-sm-4">Datetime</label>
 							<div class="col-md-6 col-sm-6">
-								<input class="form-control" type="text" id="datetime" name="datetime" placeholder="Datetime" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->datetime : '04/28/2020' ?>" required />
+								<input class="form-control" type="text" id="datetime" name="datetime" placeholder="Datetime" data-parsley-required="true" value="<?= $action == 'edit' ? $comment->created_at : '' ?>" disabled="" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-4 col-sm-4">Status Comment</label>
+							<div class="col-md-6 col-sm-6">
+								<select class="form-control" data-parsley-required="true" id="status" name="status">
+									<option value="PUBLISH" <?= $action == 'edit' ? ($comment->status == 'PUBLISH' ? 'selected' : '') : ''?>>Published</option>
+									<option value="UNPUBLISH" <?= $action == 'edit' ? ($comment->status == 'UNPUBLISH' ? 'selected' : '') : ''?>>Unpublish</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -55,7 +61,7 @@
 						<?php
 							if ($action == 'edit') {
 						?>
-								<input type="hidden" name="id" value="<?= $comment->id ?>">
+								<input type="hidden" name="id" value="<?= $comment->comment_id ?>">
 						<?php } ?>
 	                </form>
 	            </div>

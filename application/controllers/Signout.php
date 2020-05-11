@@ -6,10 +6,6 @@ class Signout extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		if ($this->session->userdata('validated_admin') == TRUE) { 
-			redirect('adminapp/Home', 'refresh');
-		}
-		$this->load->model('Model_User');
     }
 	
 	public function index()

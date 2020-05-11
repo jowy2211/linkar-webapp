@@ -4,13 +4,13 @@
 	<form id="formLogin" data-parsley-validate="true" enctype="multipart/form-data">
 		<div class="input-container style-bg">
 		  <div class="mdl-textfield mdl-js-textfield">
-		    <input class="mdl-textfield__input" type="text" id="usrname" data-parsley-required="true" required="">
+		    <input class="mdl-textfield__input" type="text" id="usrname" maxlength="18" data-parsley-required="true" required="">
 		    <label class="mdl-textfield__label" style="color: white !important; opacity: 1 !important;" for="usrname">Username</label>
 		  </div>
 		</div>
 		<div class="input-container style-bg">
 		  <div class="mdl-textfield mdl-js-textfield">
-		    <input class="mdl-textfield__input" type="password" id="pswd" data-parsley-required="true" required="">
+		    <input class="mdl-textfield__input" type="password" id="pswd" maxlength="8" maxlength="14" data-parsley-required="true" required="">
 		    <label class="mdl-textfield__label" style="color: white !important; opacity: 1 !important;" for="pswd">Pasword</label>
 		  </div>
 		</div>
