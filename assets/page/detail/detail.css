@@ -1,0 +1,188 @@
+.cover-image {
+  width: 100%;
+  height: 60vh;
+  z-index: -2;
+}
+
+.youtube-video {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 45%;
+  height: 50%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 100px #000;
+}
+
+.detail-movie-container {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 43%;
+  height: 50%;
+  border-radius: 20px;
+  color: white;
+  display: inline-grid;
+  align-items: center;
+}
+
+.detail-movie-container .detail-wrapper .movie-title {
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 35pt;
+}
+
+.detail-movie-container .detail-wrapper .featured-information p {
+  margin-right: 16px;
+}
+
+.detail-movie-container .detail-wrapper .featured-information .rating-container {
+  margin-right: 16px;
+  height: 20px;
+  color: white;
+  border: 2px solid;
+  padding: 0px 5px;
+}
+
+.detail-movie-container .detail-wrapper .featured-information .rating-container p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-right: 0px !important;
+}
+
+.detail-movie-container .detail-wrapper .movie-rating {
+  font-size: 30px !important;
+  color: gray;
+}
+
+.detail-movie-container .detail-wrapper .selected-rating {
+  color: white !important;
+}
+
+.movie-expand-container {
+  background: rgba(255, 255, 255, 0.15);
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20%;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.movie-expand-container .wrapper {
+  width: 96%;
+  margin-left: 2%;
+}
+
+.movie-achievement-container {
+  justify-content: center;
+}
+
+.movie-achievement-container .grid-container {
+  padding-right: 5%;
+  padding-left: 5%;
+  border-right: 1px solid #ffffff30;
+}
+
+.movie-achievement-container .last-container {
+  border: 0;
+}
+
+.movie-achievement-container .grid-container .title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.movie-achievement-container .grid-container .sub-title {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.movie-achievement-container .grid-container .rating .movie-rating {
+  color: gray;
+}
+
+.movie-achievement-container .grid-container .rating .selected-rating {
+  color: white;
+  float: left;
+  display: inline-block;
+  background: url('../../img/star.png') 0 0 repeat-x;
+  height: 20px;
+}
+
+.section-container {
+  margin-top: 4%;
+}
+
+.section-container .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-container p {
+  margin-bottom: 0px;
+}
+
+.section-container .content-name {
+  margin-right: 10px;
+}
+
+.comment-container {
+  margin-bottom: 30px;
+}
+
+.comment-container .avatar {
+  width: 45px;
+  height: 45px;
+  margin-right: 16px;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.comment-container .content-container {
+  width: 50%;
+}
+
+.comment-container .content-container .custom-input {
+  width: 100%;
+  margin-top: -10px;
+}
+
+.comment-container .content-container .mdl-textfield__input {
+  border-bottom: 1px solid white;
+}
+
+.comment-container .content-container .mdl-textfield__label {
+  color: white;
+}
+
+.comment-container .content-container .submit-button {
+  display: block;
+  margin-left: auto;
+}
+
+.comment-container .content-container p {
+  margin-bottom: 0px;
+}
+
+.comment-container .content-container .profile {
+  width: 100%;
+}
+.comment-container .content-container .profile .name {
+  font-weight: bold;
+  display: inline-block;
+}
+.comment-container .content-container .profile .time {
+  margin-left: 5px;
+  font-size: 10px;
+  font-weight: lighter;
+  color: gray;
+  display: inline-block;
+}

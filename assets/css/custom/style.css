@@ -1,0 +1,251 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+	outline: none;
+}
+
+::placeholder {
+	color: white;
+	opacity: 1;
+}
+
+.flex {
+	display: flex;
+}
+
+.dim {
+	opacity: 0.74;
+}
+
+.style-bg {
+	background: rgba(255, 255, 255, 0.4) !important;
+	color: white !important;
+}
+
+/* searchbar */
+
+.topnav .searchbar-container {
+	display: inline-block;
+	width: 30%;
+	padding: 12px 16px;
+}
+
+.topnav .searchbar-container .box {
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+}
+
+.topnav .searchbar-container .box .search-icon {
+	margin-right: 10px;
+	margin-left: 10px;
+	color: white;
+}
+
+.topnav .searchbar-container .box .search-input {
+	background: transparent;
+	border: 0;
+	font-size: 14px;
+	width: 100%;
+	padding-right: 16px;
+	color: white;
+}
+
+/* end of searchbar */
+
+/* menu */
+
+/* Add a black background color to the top navigation */
+.topnav {
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	overflow: hidden;
+	margin-bottom: 3%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+/* end menu */
+
+/* featured movie */
+
+.featured-movie-card {
+	width: 100%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+}
+
+.featured-movie-card .featured-poster-container {
+	width: 16%;
+	margin-left: 5%;
+	margin-right: 25px;
+}
+
+.featured-movie-card .featured-poster-container .featured-poster {
+	width: 100%;
+	padding-top: 150%;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center;
+	border-radius: 10px;
+	box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.featured-movie-card .description-container {
+	width: 30%;
+	align-self: center;
+	color: white;
+}
+
+.featured-movie-card .description-container .featured-title {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+.featured-movie-card .description-container .featured-information p {
+	margin-right: 16px;
+}
+
+.featured-movie-card .description-container .featured-information .rating-container {
+	margin-right: 16px;
+	height: 20px;
+	color: white;
+	border: 2px solid;
+	padding: 0px 5px;
+}
+
+.featured-movie-card .description-container .featured-information .rating-container p {
+	font-size: 12px;
+	line-height: 1.7;
+	margin-right: 0px !important;
+}
+
+.featured-movie-card .description-container .featured-play-button {
+	color: white;
+	text-transform: capitalize;
+	padding-left: 26px;
+	padding-right: 36px;
+	border-radius: 5px;
+}
+
+.featured-movie-card .description-container .featured-play-button i {
+	margin-top: -3px;
+	margin-right: 5px;
+}
+
+/* end of featured movie */
+
+/* category  */
+
+.category-container {
+	position: absolute;
+	width: 95%;
+	height: 100%;
+	top: 10%;
+	padding: 0 3%;
+	margin-bottom: 50px;
+}
+
+.category-container .category-title {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.category-container .poster-container {
+	width: 15.666666666666667%;
+	margin-right: 0.3%;
+	margin-left: 0.3%;
+	display: inline-block;
+	margin-bottom: 1%;
+}
+
+.category-container .poster-container .movie-poster {
+	width: 100%;
+	padding-top: 150%;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center;
+	border-radius: 10px;
+	box-shadow: 0 0 12px var(--shadow-color);
+	padding-bottom: 0.01%;
+}
+
+.category-container .poster-container .movie-poster .rating-container {
+	color: white;
+	padding: 0 10px;
+	background: #3f51b5;
+	border-radius: 20px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+.category-container .poster-container .movie-poster .rating-container span {
+	font-size: 14px;
+	align-items: center;
+	align-self: center;
+	margin-right: 3px;
+	opacity: 0.54;
+}
+
+.category-container .poster-container .movie-poster .rating-container p {
+	margin-bottom: 0px;
+	font-weight: bold;
+}
+
+/* end of category */
+
+/* animation */
+
+.poster-container {
+	transition: transform .2s;
+}
+
+.poster-container:hover {
+	transform: scale(1.05);
+}
+
+/* end of animation */
+
+/* media player */
+
+.media-player {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(130, 130, 130, 0.7);
+	text-align: center;
+}
+
+.media-player .frame-trailer {
+	z-index: 2;
+	width: 50%;
+	height: 50%;
+	display: inline-block;
+	margin-top: 10%;
+}

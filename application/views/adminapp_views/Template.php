@@ -12,14 +12,14 @@
 	<meta content="" name="author" />
 	
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
-	<link href="<?php echo base_url();?>template/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/css/animate.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/css/style.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/css/style-responsive.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url();?>template/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="<?php echo base_url();?>assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/animate.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/style.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url();?>assets/css/theme/default.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
 
 	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
@@ -27,7 +27,7 @@
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
 
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="<?php echo base_url();?>template/assets/plugins/pace/pace.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 </head>
 <body>
@@ -62,7 +62,7 @@
 					<li class="dropdown navbar-user">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 							<span class="user-image online">
-								<img src="<?php echo base_url();?>template/assets/img/user-12.jpg" alt="" /> 
+								<img src="<?php echo base_url();?>assets/img/user-12.jpg" alt="" /> 
 							</span>
 							<span class="hidden-xs"><?php echo $this->session->userdata('username');?></span> <b class="caret"></b>
 						</a>
@@ -70,7 +70,7 @@
 							<li class="arrow"></li>
 							<li><a href="javascript:;">Edit Profile</a></li>
 							<li class="divider"></li>
-							<li><a href="<?php echo base_url('Auth/Signout');?>">Log Out</a></li>
+							<li><a href="<?php echo base_url('Signout');?>">Log Out</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -88,7 +88,7 @@
 				<ul class="nav">
 					<li class="nav-profile">
 						<div class="image">
-							<a href="javascript:;"><img src="<?php echo base_url();?>template/assets/img/user-12.jpg" alt="" /></a>
+							<a href="javascript:;"><img src="<?php echo base_url();?>assets/img/user-12.jpg" alt="" /></a>
 						</div>
 						<div class="info">
 							<?php echo $this->session->userdata('username'); ?>
@@ -99,48 +99,17 @@
 				<!-- end sidebar user -->
 				<!-- begin sidebar nav -->
 				<ul class="nav">
-					<li class="nav-header">Navigation</li>
-					<li class="has-sub <?php echo ($module === 'Home' ? 'active' : '');?>">
-						<a href="javascript:;">
-						    <i class="ion-ios-list"></i> 
-						    <span>Contoh Module</span>
-						</a>
-					</li>
-					<li class="has-sub <?php echo ($module === 'Interest' ? 'active' : '');?>">
-						<a href="<?= base_url('adminapp/Interest') ?>">
-						    <i class="ion-ios-list"></i> 
-						    <span>Interest</span>
-						</a>
-					</li>
-					<li class="has-sub">
+					<li class="has-sub <?php echo ($module === 'Content' ? 'active' : '');?>">
 						<a href="javascript:;">
 						    <b class="caret pull-right"></b>
 						    <i class="ion-ios-list"></i> 
-						    <span>Menu Level</span>
+						    <span>Content</span>
 						</a>
 						<ul class="sub-menu">
-							<li class="has-sub">
-								<a href="javascript:;">
-						            <b class="caret pull-right"></b>
-						            Menu 1.1
-						        </a>
-								<ul class="sub-menu">
-									<li class="has-sub">
-										<a href="javascript:;">
-										    <b class="caret pull-right"></b>
-										    Menu 2.1
-										</a>
-										<ul class="sub-menu">
-											<li><a href="javascript:;">Menu 3.1</a></li>
-											<li><a href="javascript:;">Menu 3.2</a></li>
-										</ul>
-									</li>
-									<li><a href="javascript:;">Menu 2.2</a></li>
-									<li><a href="javascript:;">Menu 2.3</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:;">Menu 1.2</a></li>
-							<li><a href="javascript:;">Menu 1.3</a></li>
+							<li><a href="<?= base_url('adminapp/Content/Interest'); ?>">Management Interests</a></li>
+							<li><a href="<?= base_url('adminapp/Content/Channels'); ?>">Management Channels</a></li>
+							<li><a href="<?= base_url('adminapp/Content/Videos'); ?>">Management Videos</a></li>
+							<li><a href="<?= base_url('adminapp/Content/Comments'); ?>">Management Comments</a></li>
 						</ul>
 					</li>
 			        <!-- begin sidebar minify button -->
@@ -165,22 +134,22 @@
 	<!-- end page container -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="<?php echo base_url();?>template/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
-	<script src="<?php echo base_url();?>template/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
-	<script src="<?php echo base_url();?>template/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
-	<script src="<?php echo base_url();?>template/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<!--[if lt IE 9]>
-		<script src="<?php echo base_url();?>template/assets/crossbrowserjs/html5shiv.js"></script>
-		<script src="<?php echo base_url();?>template/assets/crossbrowserjs/respond.min.js"></script>
-		<script src="<?php echo base_url();?>template/assets/crossbrowserjs/excanvas.min.js"></script>
+		<script src="<?php echo base_url();?>assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="<?php echo base_url();?>assets/crossbrowserjs/respond.min.js"></script>
+		<script src="<?php echo base_url();?>assets/crossbrowserjs/excanvas.min.js"></script>
 	<![endif]-->
-	<script src="<?php echo base_url();?>template/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="<?php echo base_url();?>template/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="<?php echo base_url();?>assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 	<!-- ================== END BASE JS ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 	<?php include('external_js/index.php'); ?>
-	<script src="<?php echo base_url();?>template/assets/js/apps.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/apps.min.js"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 	
 	<script>
