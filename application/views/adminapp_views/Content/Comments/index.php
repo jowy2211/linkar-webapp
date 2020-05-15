@@ -17,15 +17,6 @@
     </div>
     <!-- begin row -->
     <div class="row">
-    	<div class="col-md-12 pull-right">
-            <p class="m-b-20">
-                <a href="<?php echo base_url('adminapp/Content/Comments/Form')?>" class="btn btn-inverse btn-sm">
-                	<i class="fa fa-plus"></i> Add New Data
-               	</a>
-            </p>
-        </div>
-    </div>
-    <div class="row">
         <!-- begin col-12 -->
         <div class="col-md-12">
             <!-- begin panel -->
@@ -44,11 +35,8 @@
                                 <th>Text</th>
                                 <th>User</th>
                                 <th>Video</th>
-                                <th>Datetime</th>
-                                <th>Created By</th>
-                                <th>Created At</th>
-                                <th>Updated By</th>
-                                <th>Updated At</th>
+                                <th>Publish at</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -61,19 +49,13 @@
                                     	<tr class="odd gradeX" id="<?php echo $no;?>">
             	                            <td><?= $no++;?></td>
                                             <td><?= $value->text ?></td>
-                                            <td><?= $value->user_id ?></td>
-                                            <td><?= $value->video_id ?></td>
-                                            <td><?= $value->datetime ?></td>
-                                            <td><?= $value->create_by ?></td>
-                                            <td><?= $value->create_at ?></td>
-                                            <td><?= $value->update_by ?></td>
-                                            <td><?= $value->update_at ?></td>
+                                            <td><?= $value->user ?></td>
+                                            <td><?= $value->video ?></td>
+                                            <td><?= $value->created_at ?></td>
+                                            <td><?= $value->status ?></td>
             	                            <td>
-            	                            	<a class="btn btn-white btn-xs m-r-5 btn-view" href="<?= base_url('adminapp/Content/Comments/Form?id='.$value->id) ?>">
+            	                            	<a class="btn btn-white btn-xs m-r-5 btn-view" href="<?= base_url('adminapp/Content/Comments/Form?id='.$value->comment_id) ?>">
             	                            		<i class="fa fa-search"></i> Edit
-            	                            	</a>
-            	                            	<a class="btn btn-white btn-xs m-r-5 btn-delete" href="<?= base_url('adminapp/Content/Comments/Remove?id='.$value->id) ?>">
-            	                            		<i class="fa fa-trash"></i> Delete
             	                            	</a>
             	                            </td>
             	                        </tr>
