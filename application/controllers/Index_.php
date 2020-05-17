@@ -39,6 +39,9 @@ class Index_ extends CI_Controller {
 			$data['list_unverified'] = $unofficial;
 		}
 
+		$featured = $this->Model_Videos->_Get_List_Featured();
+		$data['list_featured'] = $featured[0];
+
 		$data['content'] = 'userapp_views/Home/index';
 		$this->load->view('userapp_views/Template', $data);
 	}

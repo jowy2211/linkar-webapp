@@ -1,0 +1,94 @@
+.left-box-card {
+  margin: 5%;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 20px;
+  margin-right: 2%;
+  height: fit-content;
+  box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.left-box-card .avatar {
+  background: url('https://www.esquireme.com/public/styles/full_img/public/images/2019/06/02/Chris-Hemsworth-least-favourite-roles-(1).jpg');
+  width: 120px;
+  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.left-box-card .user-information-wrapper {
+  margin-top: 20px;
+  color: white;
+}
+
+.left-box-card .user-information-wrapper p {
+  margin-bottom: 0
+}
+
+.left-box-card .user-information-wrapper .name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.left-box-card .user-information-wrapper .email {
+  text-align: center;
+}
+
+.left-box-card .user-information-wrapper .description {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.right-box-card {
+  margin: 5%;
+  width: 63%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 20px;
+  margin-left: 0;
+  color: white;
+  height: fit-content;
+}
+
+.right-box-card .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.genre-wrapper {
+  width: 32%;
+  display: inline-block;
+  margin-right: 1%;
+  position: relative;
+  margin-bottom: 1%;
+}
+
+.genre-wrapper .name-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: inline-grid;
+  background: #00000080
+}
+
+.genre-wrapper .name-container p {
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+
+.genre-wrapper .genre-image {
+  width: 100%;
+  padding-top: 56.25%;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}

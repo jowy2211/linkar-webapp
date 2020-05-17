@@ -23,25 +23,50 @@
 	</script>
 </head>
 
-<body
-	style="background: <?php if ($module == '') { echo 'rgb(105, 189, 210)'; } elseif ($module == 'Detail') { echo 'rgb(4, 47, 102)'; } elseif ($module == 'Signin') { echo 'rgb(223, 73, 98)'; } elseif ($module == 'Signup') { echo 'rgb(224, 123, 57)'; };?> !important"
->
-	<div class="topnav" id="myTopnav">
+<body id="main" onscroll="scrollHandler()">
+	<div class="navbar flex" id="navbar">
+		<a class="logo" href="<?php echo base_url();?>">linkar.com</a>
+		<?php if ($module != 'Signin' && $module != 'Signup' && $session == null) { ?>
 		<div class="searchbar-container">
 			<div class="flex box dim">
 				<span class="material-icons search-icon">search</span>
 				<input class="search-input" type="text" name="k" id="searchValue" autocomplete="off" placeholder="Search in Linkar">
 			</div>
 		</div>
-		<?php if ($module != 'Signin' && $module != 'Signup' && $session == null) { ?>
-			<a href="<?php echo base_url('Signin');?>">Login</a>
-		<?php } elseif ($session != null) { ?>
-			<a href="<?php echo base_url('Signout');?>">Logout</a>
-			<a href="#">Hi, <b><?php echo $this->session->userdata('username');?></b></a>
 		<?php } ?>
-		<a href="<?php echo base_url();?>" class="<?php echo $module == '' ? 'active' : '';?>">Home</a>
-	</div>
+		<div class="menu">
+			<?php if ($module != 'Signin' && $module != 'Signup' && $session == null) { ?>
+				<a href="<?php echo base_url('Signin');?>">
+					<span class="material-icons profile-icon">
+						account_circle
+					</span>
+				</a>
+			<?php } elseif ($session != null) { ?>
+				<a class="logout-text" href="<?php echo base_url('Signout');?>"><b>Logout</b></a>
+				<a class="name-text" href="#"><?php echo $this->session->userdata('username');?></a>
+				<a href="#">
+					<span class="material-icons profile-icon">
+						account_circle
+					</span>
+				</a>
+			<?php } ?>
+		</div>
+	</div> 
 	<?php $this->load->view($content); ?>
 </body>
 	<?php include('external_js/index.php'); ?>
 </html>
+
+<script>
+	function scrollHandler() {
+		var _currentScroll = window.pageYOffset;
+		var _navbar = document.getElementById('navbar');
+		if(_currentScroll > 30){
+			_navbar.style.background = "#131313"
+			_navbar.style.boxShadow = "0 1px 12px rgba(0, 0, 0, 0.1)";
+		} else {
+			_navbar.style.background = "transparent"
+			_navbar.style.boxShadow = "none";
+		}
+	}
+</script>

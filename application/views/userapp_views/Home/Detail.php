@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="cover-image"></div>
+<div class="cover-image" style="background: url('<?php echo $detail->cover;?>');"></div>
 
 <iframe class="youtube-video" src="https://www.youtube.com/embed/<?php echo $detail ? $detail->url : '';?>" frameborder="0" allow="encrypted-media"
   allowfullscreen></iframe>
@@ -20,7 +20,7 @@
 <div class="detail-movie-container">
   <div class="detail-wrapper">
     <p class="movie-title"><?php echo $detail ? $detail->title : '';?></p>
-    <p class="dim">
+    <p class="dim movie-description">
       <?php echo $detail ? $detail->description : '';?>
     </p>
   </div>
@@ -36,12 +36,8 @@
             new_releases
           </span>
           <div>
-            <p class="title"><?php echo $detail ? $detail->ratings : 0;?> / 5</p>
-            <div class="flex rating">
-              <?php if ($detail) { ?>
-                <div id="ratingTrailer"></div>
-              <?php } ?>
-            </div>
+            <p class="title"><?php echo $detail ? $detail->rating : 0;?> / 10</p>
+            <p class="dim sub-title">Linkar Rating</p>
           </div>
         </div>
       </div>
@@ -69,24 +65,25 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="section-container" style="margin-top: 5%;">
-      <p class="title">Trailer Info</p>
-      <div class="flex">
-        <p class="dim content-name">Genre :</p>
-        <p><?php echo $detail ? $detail->interest : '';?></p>
-      </div>      <div class="flex">
-        <p class="dim content-name">Source :</p>
-        <p><?php echo $detail ? $detail->channel : '';?></p>
-      </div>
-      <div class="flex">
-        <p class="dim content-name">Publish At :</p>
-        <p><?php echo $detail ? $detail->publish_at : '';?></p>
+      <div class="grid-container last-container">
+        <div class="flex">
+          <span class="material-icons dim"
+            style="align-self: center; margin-right: 16px; font-size: 40px; margin-bottom: 10px;">
+            bar_chart
+          </span>
+          <div>
+            <p class="title"><?php $popularity = ((int)$comment / (int)$detail->views) * 100; echo number_format($popularity, 0) . "%";?></p>
+            <p class="dim sub-title">Popularity</p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="section-container">
+<div class="flex">
+  <div class="left-expand-container">
+    <div class="section-container" style="margin-top: 0px; padding: 10%;">
       <p class="title">Comments</p>
       <div class="flex comment-container">
         <div class="avatar"
@@ -122,10 +119,39 @@
       <?php } ?>
     </div>
   </div>
+  <div class="right-expand-container">
+    <div class="section-container" style="margin-top: 0px; padding: 10%;">
+      <p class="title">Trailer Info</p>
+      <div class="flex">
+        <p class="dim content-name">Reviewed by Linkar at :</p>
+        <p><?php echo $detail ? $detail->publish_at : '';?></p>
+      </div>
+      <div class="flex">
+        <p class="dim content-name">Genre :</p>
+        <p><?php echo $detail ? $detail->interest : '';?></p>
+      </div>      
+      <div class="flex">
+        <p class="dim content-name">Source :</p>
+        <p><?php echo $detail ? $detail->channel : '';?></p>
+      </div>
+      <div class="flex">
+        <p class="dim content-name">Directed by :</p>
+        <p><?php echo $detail ? $detail->director : '';?></p>
+      </div>
+      <div class="flex">
+        <p class="dim content-name">Written by :</p>
+        <p><?php echo $detail ? $detail->writer : '';?></p>
+      </div>
+      <div class="flex">
+        <p class="dim content-name">Runtime :</p>
+        <p><?php echo $detail ? $detail->runtime . " minutes" : '';?></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
-  var rating = <?php echo $detail ? $detail->ratings : 0;?>;
+  var rating = <?php echo $detail ? $detail->rating : 0;?>;
   var user = '<?php echo $this->session->userdata('user');?>';
   var calculateRating = (num) => {
     let val = parseFloat(num);

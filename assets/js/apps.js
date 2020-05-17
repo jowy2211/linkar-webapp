@@ -48,7 +48,6 @@ Website: http://www.seantheme.com/color-admin-v3.0/admin/apple/
 */
 
 
-
 /* 01. Handle Scrollbar
 ------------------------------------------------ */
 var handleSlimScroll = function() {

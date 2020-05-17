@@ -26,13 +26,13 @@
         <label class="mdl-textfield__label" style="color: white !important; opacity: 1 !important;" for="password">Pasword</label>
       </div>
     </div>
-    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect style-bg submit-button">
+    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored submit-button">
       Register
     </button>
   </form>
   <p class="register-text">Already have an account?
     <?php if ($module === 'Signup') { ?>
-      <a href="<?php echo base_url('Signin');?>" style="color: white !important;"><b>Login</b></a>
+      <a href="<?php echo base_url('Signin');?>"><b>Login</b></a>
     <?php } else { ?>
       <a id="signinBtn">Login</a>
     <?php } ?>
