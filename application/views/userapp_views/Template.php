@@ -1,4 +1,5 @@
 <?php $session = $this->session->userdata('validated_user'); $module = $this->uri->segment(1); ?>
+<?php $checker = $module != 'Signin' && $module != 'Signup' && $session == null; ?>
 <!DOCTYPE html>
 <html>
 
@@ -19,6 +20,7 @@
 	<script type="text/javascript">
 		var base_url = '<?php echo base_url();?>';
 		var sess = '<?php echo $session ? $session : null;?>';
+		var checker = <?php echo $checker ? 0 : 1;?>;
 		var temp = [];
 	</script>
 </head>
@@ -26,7 +28,7 @@
 <body id="main" onscroll="scrollHandler()">
 	<div class="navbar flex" id="navbar">
 		<a class="logo" href="<?php echo base_url();?>">linkar.com</a>
-		<?php if ($module != 'Signin' && $module != 'Signup' && $session == null) { ?>
+		<?php if ($checker) { ?>
 		<div class="searchbar-container">
 			<div class="flex box dim">
 				<span class="material-icons search-icon">search</span>

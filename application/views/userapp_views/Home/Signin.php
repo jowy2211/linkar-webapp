@@ -10,7 +10,7 @@
 		</div>
 		<div class="input-container style-bg">
 		  <div class="mdl-textfield mdl-js-textfield">
-		    <input class="mdl-textfield__input" type="password" id="pswd" maxlength="8" maxlength="14" data-parsley-required="true" required="" autocomplete="off">
+		    <input class="mdl-textfield__input" type="password" id="pswd" minlength="8" maxlength="14" data-parsley-required="true" required="" autocomplete="off">
 		    <label class="mdl-textfield__label" style="color: white !important; opacity: 1 !important;" for="pswd">Pasword</label>
 		  </div>
 		</div>

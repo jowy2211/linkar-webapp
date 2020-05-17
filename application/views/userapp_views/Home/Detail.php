@@ -149,15 +149,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  var rating = <?php echo $detail ? $detail->rating : 0;?>;
-  var user = '<?php echo $this->session->userdata('user');?>';
-  var calculateRating = (num) => {
-    let val = parseFloat(num);
-    const size = Math.max(0, (Math.min(5, val))) * 20;
-    return size;
-  };
-  var starActive = '<span class="selected-rating" style="width:'+calculateRating(rating)+'px;"></span>';
-  document.getElementById('ratingTrailer').innerHTML = starActive;
-</script>

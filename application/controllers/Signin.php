@@ -24,6 +24,7 @@ class Signin extends CI_Controller {
 	public function Now()
 	{
 		$res = $this->Model_User->_Get_Authentication();
+
 		if ($res->status === TRUE) {
 			$data = array('res' => (object)array('message' => $res->message), 'status' => true);
 		} elseif ($res->status === FALSE) {
