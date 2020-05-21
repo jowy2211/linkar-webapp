@@ -8,7 +8,7 @@
 ## 1. Landing Page - Done
 ## 2. Detail Video Page - Done
 ## 3. Login Page - Done
-## 4. User Profile Page - Pending
+## 4. User Profile Page - Done
 ## 5. Register Page - Done
 
 ## adminapp
