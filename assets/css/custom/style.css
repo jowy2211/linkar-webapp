@@ -233,7 +233,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 .category-container .poster-container {
-	width: 15.666666666666667%;
+	width: 24%;
 	margin-right: 0.3%;
 	margin-left: 0.3%;
 	display: inline-block;
@@ -242,7 +242,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .category-container .poster-container .movie-poster {
 	width: 100%;
-	padding-top: 150%;
+	padding-top: 56.25%;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;
