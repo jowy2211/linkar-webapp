@@ -86,9 +86,9 @@
     <div class="section-container" style="margin-top: 0px; padding: 10%;">
       <p class="title">Comments</p>
       <div class="flex comment-container">
-        <div class="avatar"
-          style="background-image: url('<?php echo base_url('assets/img/user-12.jpg');?>');">
-        </div>
+        <span class="material-icons avatar">
+          account_circle
+        </span>
         <div class="content-container">
           <form id="formComment" data-parsley-validate="true" enctype="multipart/form-data">
             <div class="mdl-textfield mdl-js-textfield custom-input">
@@ -104,9 +104,9 @@
       <?php if ($comment) { ?>
         <?php foreach ($comment as $key => $value) { ?>
           <div class="flex comment-container">
-            <div class="avatar"
-              style="background-image: url('<?php echo base_url('assets/img/user-12.jpg');?>');">
-            </div>
+            <span class="material-icons avatar">
+              account_circle
+            </span>
             <div class="content-container">
               <div class="profile">
                 <p class="name"><?php echo $value->name;?></p>

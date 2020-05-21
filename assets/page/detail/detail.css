@@ -37,6 +37,7 @@
 .detail-movie-container .detail-wrapper .movie-title {
   font-size: 30px;
   font-weight: bold;
+  line-height: 1.3;
 }
 
 .detail-movie-container .detail-wrapper .movie-description {
@@ -171,6 +172,7 @@
 .comment-container .avatar {
   width: 45px;
   height: 45px;
+  font-size: 45px;
   margin-right: 16px;
   border-radius: 100%;
   background-position: center;
