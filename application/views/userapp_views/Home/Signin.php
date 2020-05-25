@@ -15,8 +15,8 @@
 		  </div>
 		</div>
 		<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored submit-button">
-      Login
-    </button>
+	      Login
+	    </button>
 	</form>
 	<p class="register-text">Don't have an account?
 		<?php if ($module === 'Signin') { ?>

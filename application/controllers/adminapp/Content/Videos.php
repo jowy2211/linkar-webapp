@@ -64,11 +64,13 @@ class Videos extends CI_Controller {
 		$result = $this->Search($getChannel, $getInterest);
 		if ($result && !empty($result->items)) {
 			foreach ($result->items as $key => $value) {
-				if ($value->snippet->channelId === $getChannel->channel_id) {
+				if ($value->snippet->channelId == $getChannel->channel_id) {
 					$data['title'] = $value->snippet->title;
 					$data['description'] = $value->snippet->description;
 					$data['url'] = $value->id->videoId;
 					$data['thumbnails'] = $value->snippet->thumbnails->high->url;
+					$data['flag'] = 'VERIFIED';
+					$data['cover'] = $value->snippet->thumbnails->high->url;
 					$data['publish_at'] = $value->snippet->publishedAt;
 					$data['channel_id'] = $channelId;
 					$data['interest_id'] = $interestId;
@@ -89,10 +91,11 @@ class Videos extends CI_Controller {
 					$data['description'] = $value->snippet->description;
 					$data['url'] = $value->id->videoId;
 					$data['thumbnails'] = $value->snippet->thumbnails->high->url;
+					$data['flag'] = 'UNVERIFIED';
+					$data['cover'] = $value->snippet->thumbnails->high->url;
 					$data['publish_at'] = $value->snippet->publishedAt;
 					$data['channel_id'] = $channelId;
 					$data['interest_id'] = $interestId;
-					$data['flag'] = 'UNVERIFIED';
 					$res = $this->Model_Videos->_Store_Videos($data);
 
 					if (!$res) {

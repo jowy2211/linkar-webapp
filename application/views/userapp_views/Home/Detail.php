@@ -1,8 +1,4 @@
-<?php
-  $session = $this->session->userdata('validated_user');
-  if ($session === null) {
-?>
-<?php } ?>
+<?php $session = $this->session->userdata('validated_user'); ?>
 <div class="media-player" id="layerBackground" style="display: none;">
   <div id="layerSignup" style="display: none;">
     <?php $this->load->view('userapp_views/Home/Signup'); ?>

@@ -159,19 +159,20 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 .featured-movie-card .featured-poster-container {
-	width: 16%;
+	width: 40%;
 	margin-left: 5%;
 	margin-right: 25px;
 }
 
 .featured-movie-card .featured-poster-container .featured-poster {
 	width: 100%;
-	padding-top: 150%;
+	padding-top: 66.25%;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;
 	border-radius: 10px;
 	box-shadow: 0 0 12px var(--shadow-color);
+	padding-bottom: 0.01%;
 }
 
 .featured-movie-card .description-container {

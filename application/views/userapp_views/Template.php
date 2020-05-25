@@ -1,5 +1,6 @@
 <?php $session = $this->session->userdata('validated_user'); $module = $this->uri->segment(1); ?>
 <?php $checker = $module != 'Signin' && $module != 'Signup' && $session == null; ?>
+<?php $user_id = $this->session->userdata('user_id'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -9,9 +10,7 @@
 	<!-- linkar custom css -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom/color-sheme.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom/style.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/page/detail/detail.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/page/register/register.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/page/login/login.css">
+	<?php include('external_css/index.php'); ?>
 
 	<!-- mdl -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -19,6 +18,7 @@
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<script type="text/javascript">
 		var base_url = '<?php echo base_url();?>';
+		var user = '<?php echo $user_id ? $user_id : null;?>';
 		var sess = '<?php echo $session ? $session : null;?>';
 		var checker = <?php echo $checker ? 0 : 1;?>;
 		var temp = [];
@@ -45,8 +45,8 @@
 				</a>
 			<?php } elseif ($session != null) { ?>
 				<a class="logout-text" href="<?php echo base_url('Signout');?>"><b>Logout</b></a>
-				<a class="name-text" href="#"><?php echo $this->session->userdata('username');?></a>
-				<a href="#">
+				<a class="name-text" href="<?php echo base_url('Account');?>"><?php echo $this->session->userdata('username');?></a>
+				<a href="<?php echo base_url('Account');?>">
 					<span class="material-icons profile-icon">
 						account_circle
 					</span>
@@ -57,18 +57,17 @@
 	<?php $this->load->view($content); ?>
 </body>
 	<?php include('external_js/index.php'); ?>
-</html>
-
-<script>
-	function scrollHandler() {
-		var _currentScroll = window.pageYOffset;
-		var _navbar = document.getElementById('navbar');
-		if(_currentScroll > 30){
-			_navbar.style.background = "#131313"
-			_navbar.style.boxShadow = "0 1px 12px rgba(0, 0, 0, 0.1)";
-		} else {
-			_navbar.style.background = "transparent"
-			_navbar.style.boxShadow = "none";
+	<script type="text/javascript">
+		function scrollHandler() {
+			var _currentScroll = window.pageYOffset;
+			var _navbar = document.getElementById('navbar');
+			if(_currentScroll > 30){
+				_navbar.style.background = "#131313"
+				_navbar.style.boxShadow = "0 1px 12px rgba(0, 0, 0, 0.1)";
+			} else {
+				_navbar.style.background = "transparent"
+				_navbar.style.boxShadow = "none";
+			}
 		}
-	}
-</script>
+	</script>
+</html>

@@ -10,6 +10,9 @@
 		case 'Signup':
 			echo '<script type="text/javascript" src="'.base_url().'assets/js/custom/Signup.js"></script>';
 			break;
+		case 'Interest':
+			echo '<script type="text/javascript" src="'.base_url().'assets/js/custom/Interest.js"></script>';
+			break;
 		default:
 			echo '<script type="text/javascript" src="'.base_url().'assets/js/custom/Search.js"></script>';
 			break;
