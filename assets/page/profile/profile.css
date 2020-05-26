@@ -1,0 +1,151 @@
+.left-box-card {
+  margin: 5%;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 20px;
+  margin-right: 2%;
+  height: fit-content;
+  box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.left-box-card .avatar {
+  width: 10%;
+  height: 10%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.left-box-card .user-information-wrapper {
+  margin-top: 20px;
+  color: white;
+}
+
+.left-box-card .user-information-wrapper p {
+  margin-bottom: 0
+}
+
+.left-box-card .user-information-wrapper .name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.left-box-card .user-information-wrapper .email {
+  text-align: center;
+}
+
+.left-box-card .user-information-wrapper .description {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+/* Right Box */
+.right-box-card {
+  margin: 5%;
+  width: 63%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 20px;
+  margin-left: 0;
+  color: white;
+  height: fit-content;
+}
+
+.right-box-card .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Center Box */
+.center-box-card {
+  margin: 5%;
+  width: 87%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 20px;
+  color: white;
+  height: fit-content;
+}
+
+.center-box-card .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.selected-wrapper {
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.selected-wrapper .selected-interest {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px;
+  background-color: rgb(102, 255, 51, 0.8);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.selected-wrapper .selected-interest .selected-text {
+  color: white;
+  font-size: 18px;
+  font-weight: 10px;
+}
+
+.genre-wrapper {
+  width: 32%;
+  display: inline-block;
+  margin-right: 1%;
+  position: relative;
+  margin-bottom: 1%;
+}
+
+.genre-wrapper .name-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: inline-grid;
+  background: #00000080
+}
+
+.genre-wrapper .checkbox-interest {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: inline-grid;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.genre-wrapper .name-container p {
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+
+.genre-wrapper .genre-image {
+  width: 100%;
+  padding-top: 56.25%;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.genre-wrapper .name-container:hover {
+  box-shadow: 8px 8px 16px 0 rgba(255,255,255,0.2);
+}
+
+.active {
+  box-shadow: 8px 8px 16px 0 rgb(102, 255, 51, 0.2);
+}

@@ -1,6 +1,15 @@
+@font-face {
+	font-family: "fredokaone";
+	src: url("./fonts/fredokaone-regular-webfont.woff") format("woff")
+}
+
 * {
 	margin: 0;
 	padding: 0;
+}
+
+body {
+	background: var(--background-color) !important;
 }
 
 input:focus, select:focus, textarea:focus, button:focus {
@@ -20,69 +29,124 @@ input:focus, select:focus, textarea:focus, button:focus {
 	opacity: 0.74;
 }
 
+.featured-image {
+	width: 100%;
+	height: 100%;
+	padding-top: auto;
+	position: absolute;
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center;
+	z-index: -1;
+}
+
 .style-bg {
 	background: rgba(255, 255, 255, 0.4) !important;
 	color: white !important;
 }
 
-/* searchbar */
+/* navbar */
 
-.topnav .searchbar-container {
-	display: inline-block;
-	width: 30%;
-	padding: 12px 16px;
+.navbar {
+	width: 100%;
+	height: 70px;
+	position: fixed;
+	z-index: 10;
+	overflow: hidden;
+	background: transparent;
 }
 
-.topnav .searchbar-container .box {
+.navbar .logo {
+	color: white;
+	font-family: 'fredokaone';
+	font-size: 30px;
+	text-decoration: none;
+	align-self: center;
+	flex: 1;
+	margin-left: 5%
+}
+
+.navbar .searchbar-container {
+	flex: 1;
+	align-self: center;
+	justify-content: center;
+	display: inline-flex;
+	flex: 2
+}
+
+.navbar .searchbar-container .box {
+	width: 50%;
+	height: 30px;
 	background: rgba(255, 255, 255, 0.4);
 	border-radius: 10px;
+	box-shadow: 0px 0px 120px #000;
 }
 
-.topnav .searchbar-container .box .search-icon {
+.navbar .searchbar-container .box .search-icon {
+	margin-top: 3px;
 	margin-right: 10px;
 	margin-left: 10px;
 	color: white;
 }
 
-.topnav .searchbar-container .box .search-input {
+.navbar .searchbar-container .box .search-input {
 	background: transparent;
 	border: 0;
 	font-size: 14px;
 	width: 100%;
 	padding-right: 16px;
 	color: white;
+	margin-top: -2px;
 }
 
-/* end of searchbar */
+.navbar .menu {
+	flex: 1;
+	margin-right: 5%;
+	align-self: center;
+}
 
-/* menu */
+.navbar .menu .logout-text {
+	color: white;
+	float: right;
+	padding-top: 24px;
+	padding-left: 0px;
+}
 
-/* Add a black background color to the top navigation */
-.topnav {
-	width: 100%;
-	position: fixed;
-	z-index: 10;
-	overflow: hidden;
-	margin-bottom: 3%;
-	background: rgba(255, 255, 255, 0.2);
+.navbar .menu .name-text {
+	color: white;
+	float: right;
+	padding-top: 24px;
+	padding-left: 0px;
+	padding-right: 30px;
+}
+
+.profile-icon {
+	color: white;
+	float: right;
+	font-size: 40px !important;
+	padding-right: 0px
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
-  float: right;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+
+.navbar .menu a {
+	float: right;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
-  background: rgba(255, 255, 255, 0.4);
-  color: white;
-}
+
+/* .navbar a:hover {
+	background: rgba(255, 255, 255, 0.4);
+	color: white;
+} */
 
 /* end menu */
 
@@ -90,24 +154,25 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .featured-movie-card {
 	width: 100%;
-	padding-top: 8%;
-	padding-bottom: 8%;
+	padding-top: 25vh;
+	padding-bottom: 20vh;
 }
 
 .featured-movie-card .featured-poster-container {
-	width: 16%;
+	width: 40%;
 	margin-left: 5%;
 	margin-right: 25px;
 }
 
 .featured-movie-card .featured-poster-container .featured-poster {
 	width: 100%;
-	padding-top: 150%;
+	padding-top: 66.25%;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;
 	border-radius: 10px;
 	box-shadow: 0 0 12px var(--shadow-color);
+	padding-bottom: 0.01%;
 }
 
 .featured-movie-card .description-container {
@@ -158,10 +223,6 @@ input:focus, select:focus, textarea:focus, button:focus {
 /* category  */
 
 .category-container {
-	position: absolute;
-	width: 95%;
-	height: 100%;
-	top: 10%;
 	padding: 0 3%;
 	margin-bottom: 50px;
 }
@@ -173,7 +234,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 .category-container .poster-container {
-	width: 15.666666666666667%;
+	width: 24%;
 	margin-right: 0.3%;
 	margin-left: 0.3%;
 	display: inline-block;
@@ -182,7 +243,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 .category-container .poster-container .movie-poster {
 	width: 100%;
-	padding-top: 150%;
+	padding-top: 56.25%;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center;

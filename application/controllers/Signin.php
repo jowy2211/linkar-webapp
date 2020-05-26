@@ -11,6 +11,8 @@ class Signin extends CI_Controller {
 			redirect(base_url(), 'refresh');
 		} elseif ($this->session->userdata('validated_admin') == TRUE) { 
 			redirect('adminapp/Home', 'refresh');
+		} elseif ($this->session->userdata('validated_signup') == TRUE) {
+			redirect(base_url('Interest'), 'refresh');
 		}
 		$this->load->model('Model_User');
     }
@@ -24,6 +26,7 @@ class Signin extends CI_Controller {
 	public function Now()
 	{
 		$res = $this->Model_User->_Get_Authentication();
+
 		if ($res->status === TRUE) {
 			$data = array('res' => (object)array('message' => $res->message), 'status' => true);
 		} elseif ($res->status === FALSE) {

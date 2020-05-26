@@ -1,7 +1,11 @@
 .cover-image {
   width: 100%;
-  height: 60vh;
+  height: 90vh;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center;
   z-index: -2;
+  filter: blur(15px);
 }
 
 .youtube-video {
@@ -11,12 +15,12 @@
   width: 45%;
   height: 50%;
   border-radius: 20px;
-  box-shadow: 0px 0px 100px #000;
+  box-shadow: 0px 0px 120px #000;
 }
 
 .detail-movie-container {
   position: absolute;
-  top: 20%;
+  top: 25%;
   right: 5%;
   width: 43%;
   height: 50%;
@@ -26,10 +30,18 @@
   align-items: center;
 }
 
+.detail-movie-container .detail-wrapper {
+  padding: 0 5%;
+}
+
 .detail-movie-container .detail-wrapper .movie-title {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
-  line-height: 35pt;
+  line-height: 1.3;
+}
+
+.detail-movie-container .detail-wrapper .movie-description {
+  width: 70%;
 }
 
 .detail-movie-container .detail-wrapper .featured-information p {
@@ -55,20 +67,45 @@
   color: gray;
 }
 
-.detail-movie-container .detail-wrapper .selected-rating {
-  color: white !important;
+.movie-achievement-container .grid-container .rating .selected-rating {
+  color: white;
+  float: left;
+  display: inline-block;
+  background: url('../../img/star.png') 0 0 repeat-x;
+  height: 20px;
 }
 
 .movie-expand-container {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   width: 90%;
   margin-left: 5%;
-  margin-top: 20%;
+  margin-top: 2%;
   border-radius: 20px;
-  margin-bottom: 50px;
   color: white;
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+.left-expand-container {
+  background: rgba(255, 255, 255, 0.08);
+  width: 44%;
+  margin-left: 5%;
+  margin-top: 2%;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  color: white;
+  margin-right: 2%;
+  height: fit-content;
+}
+
+.right-expand-container {
+  background: rgba(255, 255, 255, 0.08);
+  width: 44%;
+  margin-top: 2%;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  color: white;
+  height: fit-content;
 }
 
 .movie-expand-container .wrapper {
@@ -108,10 +145,6 @@
 
 .movie-achievement-container .grid-container .rating .selected-rating {
   color: white;
-  float: left;
-  display: inline-block;
-  background: url('../../img/star.png') 0 0 repeat-x;
-  height: 20px;
 }
 
 .section-container {
@@ -139,6 +172,7 @@
 .comment-container .avatar {
   width: 45px;
   height: 45px;
+  font-size: 45px;
   margin-right: 16px;
   border-radius: 100%;
   background-position: center;
@@ -147,7 +181,7 @@
 }
 
 .comment-container .content-container {
-  width: 50%;
+  flex: 1;
 }
 
 .comment-container .content-container .custom-input {
@@ -172,17 +206,6 @@
   margin-bottom: 0px;
 }
 
-.comment-container .content-container .profile {
-  width: 100%;
-}
-.comment-container .content-container .profile .name {
+.comment-container .content-container .name {
   font-weight: bold;
-  display: inline-block;
-}
-.comment-container .content-container .profile .time {
-  margin-left: 5px;
-  font-size: 10px;
-  font-weight: lighter;
-  color: gray;
-  display: inline-block;
 }

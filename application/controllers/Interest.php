@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Signup extends CI_Controller {
+class Interest extends CI_Controller {
 
 	public function __construct()
     {
@@ -11,23 +11,25 @@ class Signup extends CI_Controller {
 			redirect(base_url(), 'refresh');
 		} elseif ($this->session->userdata('validated_admin') == TRUE) { 
 			redirect('adminapp/Home', 'refresh');
-		} elseif ($this->session->userdata('validated_signup') == TRUE) {
-			redirect(base_url('Interest'), 'refresh');
+		} elseif ($this->session->userdata('validated_signup') != TRUE) {
+			redirect(base_url(), 'refresh');
 		}
-		$this->load->model('Model_User');
+		$this->load->model('Model_Interest');
     }
 	
 	public function index()
 	{
-		$data['content'] = 'userapp_views/Home/Signup';
+		$data['list'] = $this->Model_Interest->_Get_DataList();
+		$data['content'] = 'userapp_views/Home/Interest';
 		$this->load->view('userapp_views/Template', $data);
 	}
 
-	public function Now()
+	public function Store()
 	{
-		$res = $this->Model_User->_Signup_Now($_POST);
+		$payload = json_decode(file_get_contents('php://input'),true);
+		$res = $this->Model_Interest->_Store_DataInterest($payload);
 		if ($res) {
-			$data = array('res' => (object)array('message' => 'Successfully create account.'), 'status' => true);
+			$data = array('res' => (object)array('message' => 'Successfully save your interest.'), 'status' => true);
 		} else {
 			$data = array('res' => (object)array('message' => 'Your request has an error, try again later.'), 'status' => false);
 		}

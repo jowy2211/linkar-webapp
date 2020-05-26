@@ -46,7 +46,7 @@ class Model_User extends CI_Model{
                 if ($res->level === 'USER') {
                     $data = array(
                             'log_time' => $today,
-                            'user' => $res->user_id,
+                            'user_id' => $res->user_id,
                             'username' => $username,
                             'fullname' => $res->fullname,
                             'validated_user' => TRUE
@@ -105,12 +105,41 @@ class Model_User extends CI_Model{
 
     public function _Signup_Now($data)
     {
+        date_default_timezone_set("Asia/Jakarta");
+        $today = date("Y-m-d H:i:s");
+        
         $encrypt = md5($data['password']);
         unset($data['password']);
+        
         $data['level'] = 'USER';
         $data['password'] = $encrypt;
+
         $res = $this->db->insert('users', $data);
 
+        if ($res) {
+            $this->db->where($data);
+            $get = $this->db->get('users')->row();
+
+            if ($get) {
+                $data = array(
+                        'user_id' => $get->user_id,
+                        'log_time' => $today,
+                        'username' => $get->username,
+                        'validated_signup' => TRUE
+                        );
+                $this->session->set_userdata($data);
+
+                return $get;
+            }
+            return false;
+        }
+    }
+
+    public function _Get_Detail_User()
+    {
+        $user_id = $this->session->userdata('user_id');
+        $this->db->where('user_id', $user_id);
+        $res = $this->db->get('users')->row();
         return $res;
     }
 }

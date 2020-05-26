@@ -73,7 +73,7 @@
                                 } else {
                             ?>
                                 <tr class="odd gradeX" id="1">
-                                    <td colspan="5" class="text-center">No Data</td>
+                                    <td colspan="7" class="text-center">No Data</td>
                                 </tr>
                             <?php 
                                 } 

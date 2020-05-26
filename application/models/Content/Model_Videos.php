@@ -26,13 +26,25 @@ class Model_Videos extends CI_Model{
         return $res->row();
     }
 
+    public function _Get_List_Featured()
+    {
+        $this->db->select('a.*, b.name as channel, c.name as interest');
+        $this->db->from('videos a');
+        $this->db->join('channels b','a.channel_id = b.id');
+        $this->db->join('interests c','a.interest_id = c.id');
+        $this->db->where('a.is_featured', 1);
+        $res = $this->db->get();
+        return $res->result();
+    }
+
     public function _Get_List_Trailer($flag)
     {
         $this->db->select('a.*, b.name as channel, c.name as interest');
         $this->db->from('videos a');
         $this->db->join('channels b','a.channel_id = b.id');
         $this->db->join('interests c','a.interest_id = c.id');
-        $this->db->where(array('a.flag' => $flag,'a.id' => 2));
+        $this->db->where('a.flag', $flag);
+        $this->db->where('a.is_featured', 0);
         // $this->db->group_by('b.name');
         // $this->db->group_by('a.publish_at');
         $res = $this->db->get();
@@ -46,9 +58,25 @@ class Model_Videos extends CI_Model{
         $this->db->join('channels b','a.channel_id = b.id');
         $this->db->join('interests c','a.interest_id = c.id');
         $this->db->where('a.flag', 'VERIFIED');
+        $this->db->where('a.is_featured', 0);
         $this->db->like('a.title', $value);
         $filter = $this->db->get()->result();
         return $filter;
+    }
+
+    public function _Get_My_List($value)
+    {
+        $user_id = $this->session->userdata('user_id');
+        $this->db->select('a.*, b.name as channel, c.name as interest');
+        $this->db->from('videos a');
+        $this->db->join('channels b','a.channel_id = b.id');
+        $this->db->join('interests c','a.interest_id = c.id');
+        $this->db->join('user_interests d','a.interest_id = d.interest_id');
+        $this->db->where('a.flag', $value);
+        $this->db->where('a.is_featured', 0);
+        $this->db->where('d.user_id', $user_id);
+        $res = $this->db->get()->result();
+        return $res;
     }
 
     public function _Get_Channels()
@@ -91,7 +119,8 @@ class Model_Videos extends CI_Model{
         $res = $this->db->get()->row();
         if ($res) {
             $current = (int)$res->views;
-            $data['views'] = $current + 1;
+            $current++;
+            $data['views'] = $current;
             $this->db->where('id', $id);
             $this->db->update('videos', $data);
         }
