@@ -32,7 +32,7 @@ class Model_Videos extends CI_Model{
         $this->db->from('videos a');
         $this->db->join('channels b','a.channel_id = b.id');
         $this->db->join('interests c','a.interest_id = c.id');
-        $this->db->where('a.flag', $flag);
+        $this->db->where(array('a.flag' => $flag,'a.id' => 2));
         // $this->db->group_by('b.name');
         // $this->db->group_by('a.publish_at');
         $res = $this->db->get();
