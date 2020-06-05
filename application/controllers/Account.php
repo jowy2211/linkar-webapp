@@ -12,13 +12,13 @@ class Account extends CI_Controller {
 			redirect(base_url(), 'refresh');
 		}
 		$this->load->model('Model_Interest');
-		$this->load->model('Model_user');
+		$this->load->model('Model_User');
     }
 	
 	public function index()
 	{
 		$data['interest'] = $this->Model_Interest->_Get_My_Interest();
-		$data['detail'] = $this->Model_user->_Get_Detail_User();
+		$data['detail'] = $this->Model_User->_Get_Detail_User();
 		// var_dump($data); exit();
 		$data['content'] = 'userapp_views/Home/Account';
 		$this->load->view('userapp_views/Template', $data);
